@@ -1,0 +1,44 @@
+Front End:
+Part -1-Module-1
+Javascript=>
+HTML
+CSS
+BOOTSTRAP
+Advance Javascript
+
+
+Part 2-Module-2
+React -Library -JS -UI 
+1 Project
+
+>> GITHUB
+>>HOSTING UR WEBPAGES
+________________________________________________________
+Backend- 
+Part 3-Module-3
+MONGODB _DB
+
+Part 4-Module-4
+Node JS
+Express
+etc....
+1 Project
+
+>>HOSTING UR BACKEND
+
+1 Project --- ur choice 
+
+
+Code Editor
+> INSTALL VISUAL Code
+ > intelligent code editor 
+
+ Extension/ Market Place.
+ >live server
+ > html css support
+ > helps us to write code easily
+
+
+
+
+
