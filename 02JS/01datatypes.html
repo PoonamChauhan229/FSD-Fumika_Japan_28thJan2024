@@ -64,6 +64,139 @@
 
         console.log(typeof(0.32782))
 
+        console.log(2+2)
+
+        // string
+        // "" inside double quotes
+        // "HI"
+        console.log("Hello World")
+        console.log(typeof("Hello World"))
+        console.log(typeof("Hi"))
+
+        console.log(typeof("2"))//string
+
+        console.log("2"+"2")//22 concat => 
+
+        console.log("Hi"+46)//Hi46
+
+        console.log(2+5+"23")//723
+
+        console.log("2"+5+"23")//2523
+
+        console.log("2"+4+5+"23")///"2"+4=>"24"+5=>245+"23"=>24523
+
+        // bOOLEAN
+
+        //true and false
+        console.log(true)
+        console.log(false)
+
+        console.log(typeof(true))//boolean
+        console.log(typeof(false))//boolean
+
+        // composite
+          //=> array
+        //   []
+        //consist hetergenous datatypes
+        // [1,2,"hi","hello",true,false]
+        console.log([12,22,"hi","hello",true,false])
+        //index
+        // starts with 0 index no 
+        // variablename[0]=>1
+
+        var arr=[11,22,"hi","hello",true,false]
+        // 0 1 2 3 4 5 6 7=> index nos
+        // 11 12 22 ....=> elements
+        //0=>11
+        //1=?22
+        // 2=>hi
+        // 3=>hello
+        // 4=>true
+        // 5=>false
+        console.log(arr)
+        console.log(arr[0])
+        console.log(arr[1])
+        console.log(arr[5])//false
+        console.log(arr[4])
+
+        // length=> count start from 1
+        // index=> count start from 0
+        console.log(arr.length)
+        // insert in an array
+        arr[6]="Fumika"
+        console.log(arr)
+        // update in an aary
+        // 11 to 600
+        arr[0]=600
+        console.log(arr)
+        console.log(typeof(arr))// array => object
+
+        //object
+        // {}
+        // key:value pair
+        // Syntax
+        // {
+        //     key1:"value1",
+        //     key2:"value2",
+        //     key3:"value3",
+        //     key4:"value4",
+        //     key5:"value5"// propery:value
+        // }
+
+
+        //employee
+        var obj={
+            employeeid:18,
+            employeename:"Poonam",
+            jobrole:"FSD developer",
+            location:"India"
+        }
+        console.log(obj)
+        //students obj
+        var obj1={
+            studeentroll:12,
+            class:10,
+            location:"Tokyo",
+            contactnum:6790642789
+        }
+        console.log(obj1)
+
+        // you create an object car
+        // access obj using dot operator
+        console.log(obj1.class)
+
+        console.log(obj1.studeentroll)
+        console.log(obj1.location)
+
+        console.log(obj.jobrole)
+        //insert 
+        obj.timings="9am to 5pm"
+        console.log(obj)
+
+        obj.breaktime="1 hour"
+        console.log(obj)
+
+        //update
+        obj.location="India,Mumbai"
+        console.log(obj)   
+        
+        obj.random="test"
+        console.log(obj)
+
+
+        //delet an property
+        delete obj.random;
+        console.log(obj)
+        console.log(typeof(obj))//object
+        // Trivial Datatype
+        // null
+        //undefined
+        var a=null;
+        console.log(a)
+
+        var b;
+        console.log(b)
     </script>
+
 </body>
 </html>
