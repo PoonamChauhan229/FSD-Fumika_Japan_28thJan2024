@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Operators -->
+    <!-- Mathematical Operators -->
+
+    +  Addition <br>
+    -  Subtraction<br>
+    *  Multiplication<br>
+    ** Exponential<br>
+    /  Division<br>
+    %  Modulus<br>
+    ++ Increment<br>
+    -- Decrement
+
+
+    <script>
+        // +  Addition
+        console.log(2+2)//4
+
+        var a=10;// global variable
+        var b=30;// global variable
+        console.log(a+b)//10+30=40
+
+
+        var x=100;
+        var y=200;
+        var z=300;
+        console.log(x+y+z)//100+200+300=600
+        console.log(x+y+z+a+b)//100+200+300+10+30=640
+
+       //____________________________________________________________________
+        {
+            {
+                let d=90;
+                let u=40;
+                console.log(d+u)//130
+            }
+            //console.log(d+u)//not defined
+        }
+        //console.log(d+u)//error not defined
+
+        //_________________________________________________________________
+        {
+            let p=100;
+            let q=40;
+            {
+               
+                console.log(p+q)//140
+                let f=10
+                console.log(f)//10
+            }
+            console.log(p+q)//140
+            //console.log(f)//not defined
+        }
+        //console.log(p+q)//not defined
+        //console.log(f)//not defined
+
+ //_________________________________________________________________
+        // Subtraction
+        // -
+        console.log(40-10)//30
+        var g=50;
+        var t=10;
+        console.log(g-t)//40
+
+        {
+            const s=90;
+            const y=20;
+            console.log(s-y)//70
+        }
+        // console.log(s-y)//not defined
+
+ //_________________________________________________________________
+
+        {
+            const u=190;
+            const r=70;
+            console.log(u-r)//120
+            {   
+                console.log(u-r)//120
+                const p=56;
+                console.log(p)//56
+            }
+            console.log(u-r)//120
+            //console.log(p)//not defined
+        }
+       //console.log(u-r)//not defined
+       //console.log(p)// not defined
+
+//       __________________________________________________________________
+
+       {
+        var s=390;
+        var g=90;
+        console.log(s-g)//300
+        {
+            var x=80
+            console.log(s-g)//300
+            console.log(x)//80
+            {
+                var y=78;
+                console.log(s-g)//300
+                console.log(x)//80
+                console.log(y)//78
+            }
+            console.log(s-g)//300
+            console.log(x)//80
+            console.log(y)//78
+        }
+        console.log(s-g)//300
+        console.log(x)//80
+        console.log(y)//78
+       }
+       console.log(s-g)//300
+       console.log(x)// 80
+       console.log(y)// 78
+// ________________________________
+// *  Multiplication
+console.log(2*2)//4
+let v=90;
+let r=78;
+var e=890
+console.log(v*r*e)//6247800
+// ________________________________
+// ** Exponential
+console.log(2**2)//2*2=4 
+console.log(2**3)//2*2*2=8
+console.log(2**4)//2*2*2*2=16
+console.log(1**9)//1-> 9 times =>1
+
+// ________________________________
+//     /  Division=> Quotient
+console.log(2/2)//1
+console.log(4/2)//2
+
+console.log(e/v)//890/90=9.8
+
+
+
+    </script>
+</body>
+</html>

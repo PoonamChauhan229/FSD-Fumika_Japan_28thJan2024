@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- scope -->
+    <script>
+        {
+        // scope=> boundary
+         }
+
+    // keywords=> some scope
+    // var  => functional scope
+    //let => blockscope 
+    // const => block scope
+
+    var a=50;// global variable
+    let b=78;// global variable
+    const c=100;// global varibale
+
+    {
+        console.log(a,b,c)//50 78 100
+    }
+// ___________________________________________________________________
+    {
+        let x=90;// local variable => accessible only within block
+        console.log(x)//90
+        console.log(b)///78
+    }
+   // console.log(x)//error not defined => not accessible => throws an error => x is not defined
+
+// __________________________________________________________________________
+    {
+        const y=67;// local variable
+        console.log(y)//67
+        console.log(c,b)//100 78
+    }
+    //console.log(y)//error => not defined =>Uncaught ReferenceError: y is not defined
+
+//_______________________________________________________________________
+    {
+        var j=90// global variable
+        console.log(a,b,c)//50 78 100
+    }
+    console.log(j)//90
+    
+    console.log(a,b,c)//50 78 100
+
+    console.log(j)//90
+
+
+    // Questions:
+
+    </script>
+</body>
+</html>
