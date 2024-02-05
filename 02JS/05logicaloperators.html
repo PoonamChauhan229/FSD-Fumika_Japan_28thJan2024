@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- TEaching -->
+    &&=>AND  <!-- Sesiion St + TEACH + System +Internet+ English COMM -->
+    ||=>OR  <!--  St , ST+TEACH-->
+    ! =>NOT 
+
+    <script>
+        var a=90;
+        console.log(a<100)//90<100//true
+        console.log(a==80)//90==80//false
+        // && AND
+        // T && T && T && T...........
+        // T && F=> F => not execute
+        // F && T=> F => not execute
+        // T && T=> T => execute       
+        // F && F=> F => not execute
+
+        if(a==90 && a<100){
+            console.log("AND Condition Executed Successfully, as the condition is true")
+        }
+
+        if(a==80 && a<100){
+            console.log("AND Condition Executed Successfully, as the condition is true")
+        }else{
+            console.log("AND Condition Execution Failed, as the condition is false")
+        }
+
+        //  || OR => ANy one condition or more than 1 condition
+        // T ||F=> T => execute
+        // F ||T=> T => execute
+        // T ||T=> T => execute       
+        // F ||F=> F => not execute
+        if(a==80 || a<100){//F ||T =>T
+            console.log("OR Condition Executed Successfully, as the condition is true")
+        }
+
+        if(a==80 || a<50){ //F||F => F=> else block will execute
+            console.log("OR Condition Executed Successfully, as the condition is true")
+        }else{
+            console.log("OR Condition Execution Failed, as the condition is false")
+        }
+        // a=90
+        if(a==80 || a<120){ //F||T => T=> if block will execute
+            console.log("OR Condition Executed Successfully, as the condition is true")
+        }else{
+            console.log("OR Condition Execution Failed, as the condition is false")
+        }
+
+        //  ! =>NOT 
+
+        console.log(!true)//false
+        console.log(!false)//true
+        // a==undefined
+        console.log(!a)//false
+
+
+        if(!a){//falase
+            console.log("A is present")
+        }else{              
+            console.log("A is absent")
+        }
+
+
+        // = assignment operator var a=78;
+        // == comparusion operator 
+        // only values are checked
+        console.log(2==2)//true
+        console.log("2"== 2)//true => string and number
+        console.log("2"== 24)//false => number didne matched
+
+        // === strict comparision
+        // value check
+        //datatype check
+        //ANyone fails it will be false output
+
+        console.log("2"=== 2)//false => string and number 2==2=T  +string==number +F => False
+        console.log("2"=== '2')//true => value + datatype => checked > true 2===2 string ===string 
+        console.log(2 === 2)//true => 2===2 | number ===number > true
+
+    </script>
+</body>
+</html>

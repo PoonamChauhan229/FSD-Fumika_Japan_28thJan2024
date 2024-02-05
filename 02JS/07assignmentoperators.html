@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    += Addition        x+=y   x=x+y<br> 
+
+    -=  Subtraction    x-=y   x=x-y <br>
+
+    *=  Multiplication x*=y   x=x*y<br>
+    
+    **= Exponential    x**=y   x=x**y<br>
+
+    /=  Division       x/=y   x=x/y  <br>
+
+    %=  Modulus        x%=y   x=x%y<br>
+
+    <script>
+        // = assignment operator
+        var x=100;
+        var y=200
+        console.log(x+y)
+        console.log(x+=y)//x=x+y
+        console.log(x,y)//300 200
+
+        var x=100;
+        var y=200
+        console.log(x-y)
+        console.log(x-=y)//x=x-y
+        console.log(x,y)//-100 200
+
+        // break down
+        // calculations are perfromed between 2 operands x,y
+        //value is stored which is present in left side
+        console.log('-----------')
+        var x=100;
+        var y=200
+        console.log(y+x)//300
+        console.log(y+=x)//300// y=y+x
+        console.log(y,x)
+
+
+        var x=100;
+        var y=200
+        console.log(x*y)//20000
+        console.log(x*=y)//x=x*y
+        console.log(x,y)//20000 200
+
+    </script>
+</body>
+</html>
+
+<!-- loops > -->
