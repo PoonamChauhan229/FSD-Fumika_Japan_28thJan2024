@@ -84,7 +84,9 @@
         }
         console.log(sum+n)
     }
-    addarr([2,4,6,8],78)
+  addarr([2,4,6,8],78)
+ 
+
 
 
 
@@ -95,7 +97,54 @@
 // 1 function
 
 
+// function with return keyword
+// return > to give back
 
+function example(){
+ return 100;
+}
+console.log(example())
+
+let a=example()
+console.log(a)
+console.log(a+300)
+
+
+function addarr01(array,n){
+        var sum=0;
+        for(var i=0;i<array.length;i++){
+            // console.log(fun[i])
+            sum=sum+array[i]
+        }
+        // console.log(sum+n)
+        return sum+n
+
+    }
+  let s=addarr01([2,4,6,8],78)
+    console.log(s+600+8000)
+
+    // task
+    // E+M+S => 80 90 60
+    // 100 100 100 
+    // % scored
+
+    // function 1 > addition of marks > return
+    // function 2 > calculate % > console|| return
+
+    function score(e,m,s){
+      //  console.log(e+m+s)
+        return e+m+s
+    }
+    var total=score(80,90,70)
+    console.log(total)
+
+    function perctange(x){
+        var per= (x/300)*100
+        console.log(per)
+        // return and print outside 
+    }
+    perctange(total)
+    
     </script>
 </body>
 </html>
