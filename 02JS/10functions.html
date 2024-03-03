@@ -51,11 +51,11 @@
     //param2=val2
     ///....
 
-    function addnew(x,y){
+    function addnew(x,y){// parameters x,y
         console.log(x+y)
         console.log(x,y)
     }
-    addnew(3,6)
+    addnew(3,6)// arguments
     addnew(6,4)
 
     function test(fumika,poonam,x,k){
@@ -242,13 +242,84 @@ function addarr01(array,n){
     let factansone=calFactNum(5)
     console.log(factansone)
 
-    // even >0 2 4 6 8... 
-    // odd > 1 3 5 7 9
+// even >0 2 4 6 8... 
+// odd > 1 3 5 7 9
 
-    let arr=[2,4,5,8,9,10]
-    // can u calulate total of array elements using annoymous function 
+//let arr=[2,4,5,8,9,10]
+// can u calulate total of array elements using annoymous function 
 
 
-    </script>
+// Arrow functions > later stage with an ES6
+//short hands
+//=>
+// similar to annoymous function but nt exactly annoymous
+// entire function, we are going to store in variable
+//function doesnt have a name
+// we dont use function keyword as well
+// we directly use (),after the  paraenthesis , => symbol after that it is followed by flower braces {}
+// we call/invoke the function by the variable name
+
+
+// syntax:
+// let arrwfunction=()=>{//block of code}
+//arrwfunction()
+
+
+let arrwfunction=()=>{console.log("Arrowfunction")}
+arrwfunction()
+//2+2
+
+function justnormal(){
+    console.log(2+2)
+}
+justnormal()
+
+let addfunction=()=>console.log(2+3) 
+addfunction()
+//short hand
+// other feateure
+//if the function is small, execeute in 1 line , then no need of {} braces
+// if multiple lines, then we {} braces
+let addfunctionmultiple=()=>{
+    console.log(2+3) 
+    console.log(7+9)
+}
+addfunctionmultiple()
+
+// cube  and square
+// create sepeertae arrow function, in onle line try to finsih
+
+// with parameter and arguments
+let arrwsquareNum=(x)=>console.log(x*x)
+arrwsquareNum(2)
+
+// with return keyword
+//single line
+// dont use {}
+// retutn keyword
+let singlearrwfun=()=>2
+let sqx=singlearrwfun()
+console.log(sqx)
+
+// multiple lines
+let multiarrowfun=()=>{
+    let a=20;
+    return a
+}
+console.log(multiarrowfun())
+
+// when we use return keyword, when to dircetly use the console.log
+// and when to store in an variable and console.log
+
+
+// not using an return keyword, print the val the inside the function
+
+// using return keyword, we return the value from the value.
+// wec want to use the return val, some where else, store it and use it some where
+// other u just console.log
+
+
+
+</script>
 </body>
 </html>
