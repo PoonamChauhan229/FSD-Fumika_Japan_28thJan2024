@@ -225,6 +225,98 @@ console.log(array28.includes(20))
 console.log(array28.includes("fumika"))
 
 
+//Very very important array methods
+// map()
+//transform the array > return an array
+// [1,2,3,4]
+// [10,20,30,40]
+//each element is mutiplied by 10 => 1*10 , 2*10, 3*10, 4*10 [10,20,30,40]
+
+//for loop >  i- index || arr[i] - element   (using for loop)
+//map      > index-index || element -element (inside the function using map)  
+
+var arr70=[1,2,3,4] 
+//[10,20,30,40]
+//arr70.map((element)=>console.log(element*10))
+let res70=arr70.map((element)=>element*10)
+console.log(res70)
+console.log(arr70)
+
+arr70.map((element,index)=>console.log(index))
+//10 20 30 40 > element
+//0  1  2  3 > index
+//elemnt +index 10+0 10 || 20+1 21 || 30+2 32
+[10,21,32,43]
+
+let res72=arr70.map((element,index)=>element*10+index)
+console.log(res72)
+
+//filter method
+//even num || odd num  
+// > < = num
+
+// arr.filter()
+//function as a parameter 
+            // > args >element index
+            // we have to pass the condition > true => output 
+                                         //  > false => ignore no output       
+// resultant is an array
+
+let arr34=[1,4,5,78,90]
+// i want out the elements who are greater than 40
+//[78,90]
+
+let res34=arr34.filter((element,index)=>element>40)
+console.log(res34)
+
+// do the same operation < 40
+// [1,4,5]
+// even
+// odd
+
+//reduce
+// single value 
+// reduce give single value
+// [1,2,3,4,5] > addition 
+// arr.reduce()
+//acc> accumuluation 
+// acc>1
+// cv >2
+//1+2 >3 acc
+// cv 4
+
+// without acc value > its get the 1st element as the value of acc
+var arr56=[1,2,3,4,5]
+let res56=arr56.reduce((acc,cv)=>acc+cv)
+console.log(res56)
+
+// ex:
+arr45=[10,20,30,40,50] // no acc value
+
+var arr57=[1,2,3,4,5]
+//with acc value > 100
+let res57=arr57.reduce((acc,cv)=>acc+cv,100)
+console.log(res57)
+
+// Test the working
+// https://pythontutor.com/render.html#mode=display
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 </body>
 </html>
