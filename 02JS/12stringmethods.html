@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        
+        >string methods
+        >applicable to string
+
+           
+    -->
+    <script>
+        // split method
+        // convert into a array considering the seperators
+        let str="HelloWorld"
+        // 
+        // [H,e,l,l,o,W,o,r,l,d ]
+        console.log(str)
+        // 
+        // Noraml way not using any methods
+        var arr=[]
+        for(var i=0;i<str.length;i++){
+            // console.log(str[i])H e l
+            arr.push(str[i])
+        }
+        console.log(arr)
+
+        //split method
+        var newstr1=str.split("")// u have to pass from where/what u want to split || Seperator
+        //""
+        console.log(newstr1)
+
+        let str1="H e l l o W o r l d"
+        //" "
+        var newstr2=str1.split(" ")// u have to pass from where/what u want to split
+        console.log(newstr2)
+
+        let str2="H@e@l@l@o@W@o@r@l@d"
+        // [H,e,l,l,o,W,o,r,l,d ]
+        //@
+        var newstr3=str2.split("@")// u have to pass from where/what u want to split
+        console.log(newstr3)
+
+        let str3="H-e-l-l-o-W-o-r-l-d"
+        //-
+        var newstr4=str3.split("-")// u have to pass from where/what u want to split
+        console.log(newstr4)
+        // [H,e,l,l,o,W,o,r,l,d ]
+        // --- arr to str
+        // ---arr methods > join()
+        // "H@e@l@l@o@W@o@r@l@d"
+        console.log(newstr4.join("@"))
+        
+        //length > How many No of characters?|| Count 
+        let str4="H-e-l-l-o-W-o-r-l-d"
+        console.log(str4.length)
+
+        let str5="The String object is used to represent and manipulate a sequence of characters"
+        console.log(str5.length)
+
+        // concat
+        let str6 = 'Hello';
+        let str7 = 'World';
+        console.log(str6.concat(str7))
+        console.log(str6.concat(" ",str7," My name is Fumika"))
+
+        let str8="The String object is used to represent and manipulate a sequence of characters"
+        let str9="Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation."
+
+     
+
+        //The String object is used to represent and manipulate a sequence of characters Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation Hello World Hello World
+
+        // endsWith()// boolean value > true / false 
+        let str10="The String object is used"
+        console.log(str10.endsWith("used"))
+        console.log(str10.endsWith("use"))
+
+        let str11="The String object is used?"
+        console.log(str11.endsWith("used"))//false
+        console.log(str11.endsWith("used?"))//true
+        console.log(str11.endsWith("?"))//true
+
+
+
+
+
+    </script>
+</body>
+</html>
