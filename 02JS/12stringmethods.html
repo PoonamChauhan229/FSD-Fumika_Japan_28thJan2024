@@ -92,6 +92,56 @@
         console.log(str12.endsWith('.'))
         console.log(str12.endsWith('Foundation.'))
 
+        //includes()
+        //string.includes()
+
+        let str13="The String object is used? Wikipedia is a free online encyclopedia, created"
+        //whether the word/character exists or not in the given string
+        // exits> true
+        //doesnt exists > false
+        //case sensitive
+        console.log(str13.includes('is'))//true
+        console.log(str13.includes('not'))//false
+        console.log(str13.includes('Is'))//false
+
+        let str14="Ezenwo Nyesom Wike CON is a Nigerian politician and lawyer who has served as the minister of the Federal Capital Territory since 2023"
+        // Territory > true
+        //2023 > true
+        // LAWYER >  false
+
+        //toLowerCase()
+        //small letter > convert entire string into small letter
+        let str15="Ezenwo Nyesom Wike CON is a Nigerian politician and lawyer who has served as the minister of the Federal Capital Territory since 2023"
+        console.log(str15.toLowerCase())
+
+        let str16="Minister of the Federal Capital Territory (FCT). Governor of Rivers State 2015-2023. Direct tweets by Nyesom Wike are signed N.E.W."
+
+        //OF includes >false || true 
+        //OF > of
+        console.log(str16.includes("OF"))
+        console.log("OF".toLowerCase())
+
+        console.log(str16.includes("OF".toLowerCase()))//true
+
+        let str17="OF"
+        console.log(str16.includes(str17.toLowerCase()))//true
+
+        const str18 = "To be, or not to be, that is the question.";
+
+        console.log(str18.includes("To be")); //true
+        console.log(str18.includes("question"));// true
+        console.log(str18.includes("nonexistent"));// false
+        console.log(str18.includes("To be")); // true
+        console.log(str18.includes("TO BE")); // false
+        console.log(str18.includes("")); // true
+        console.log(str18.includes("BE"));// false > make this true
+        console.log(str18.includes("BE".toLowerCase()))// true
+        console.log(str18.endsWith("question"));// false
+        console.log(str18.endsWith("question."));// true
+        
+
+
+
 
 
 
