@@ -139,12 +139,70 @@
         console.log(str18.endsWith("question"));// false
         console.log(str18.endsWith("question."));// true
         
+        // uppercase
+
+        // string repeat
+        const mood = 'Happy! ';
+
+    console.log(mood.repeat(4))
 
 
 
 
+    const str19 = "To be, or not to be, that is the question.";
+    console.log(str19.repeat(3))
 
 
+//"abc".repeat(-1);//error > positive values
+"abc".repeat(0); 
+"abc".repeat(1); 
+"abc".repeat(2); 
+"abc".repeat(3.5); 
+//"abc".repeat(1 / 0);
+
+// 2 times()
+console.log(str19.repeat(2).toLowerCase().toUpperCase().includes('be'))
+//false > true 
+
+//replace < 1st word ,it will replace rest will be ignored
+const str20 = "I think Ruth's dog is cuter than your dog!";
+//think > rethinking
+
+console.log(str20.replace("think","rethink,"))
+console.log(str20.replace("cuter","beautiful"))
+
+//replace
+//Ruth > Fumika
+console.log(str20.replace("Ruth","Fumika"))
+
+//I rethink, Fumika's dog is beautiful than your dog!
+console.log(str20.replace("think","rethink,").replace("cuter","beautiful").replace("Ruth","Fumika"))
+
+const str21 = "I think Ruth's dog is cuter than your dog !";
+console.log(str21.replace("dog","elephant"))// 1st word only gets updatd
+
+//replaceAll
+console.log(str21.replaceAll('dog',"elephant"))
+
+//Task 
+const str22 = "To be, or not to be, that is the question.";
+// str22 > repeat 5times > convert to uppercase > replace > question >>answer >> split with space
+
+//trim()// additional space will be removed
+//example >user > emailaddress >  fumika@gmail.com  
+
+const mood1 = 'Happy!     ';
+console.log(mood1.trim())
+
+const mood2 = '           Happy!     ';
+console.log(mood2.trim())
+
+let str23="  fumika@gmail.com  "  //||wrong email ? > space
+console.log(str23.trim()) // removes space from the both ends
+
+console.log(str23.trimStart())// remove space from the start
+
+console.log(str23.trimEnd()) // remove space from the end
 
     </script>
 </body>
