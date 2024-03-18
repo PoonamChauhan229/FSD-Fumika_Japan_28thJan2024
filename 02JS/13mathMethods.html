@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Math Methods
+        let num=4
+        // square
+        //16
+        // 4*4 > 4 2 times
+
+        //cube
+        //64 > 4 3 times
+
+
+        // 4 4 times
+        //256
+
+        // 4 5 times
+        
+        // Math.pow(num,times) >  
+        console.log(Math.pow(4,5))
+        console.log(4*4*4*4*4)
+
+        // 4 10 times
+        console.log(Math.pow(4,10))
+
+        let num1=6;
+        let times=6
+        console.log(Math.pow(num1,times))
+
+        // 7 3    >343
+        // 4 0.5  >2
+        // 7 -2   >0.02...
+        // -7 0.5 >NaN >Not an Number
+        // 2 10   >1024
+        
+
+        //Math.sqrt()
+        //square root of a number?
+        console.log(Math.sqrt(49)) //7*7
+        console.log(Math.sqrt(9)) // 3*3
+        console.log(Math.sqrt(64)) //8
+        console.log(Math.sqrt(3))//not a perfect square >decimal values
+
+        //calculate the sqrt of
+        //-1       >NaN Not an Number
+        //0        >0
+        //-0       >-0
+        //1        >1
+        //2        >1.41....
+        //Infinity >Infinity
+
+        //calculate the hypotenuse
+        // a and b > 3 4
+        // sqrt(a*a + b*b)
+        console.log(Math.sqrt(Math.pow(3,2)+Math.pow(4,2)))
+        
+        // a and b > 5 12
+        // 13
+
+        //Math.cbrt  
+        //> 3*3*3 > 27 > 3
+        //> 4*4*4 > 64 > 4
+
+        //Find the cube root of 27
+        //3
+        console.log(Math.cbrt(27))//3
+
+        //Find the cube root of 64
+        //4
+        console.log(Math.cbrt(64))//4
+
+        //Find the cube root of 1
+        //1
+        console.log(Math.cbrt(1))//1
+
+         //Find the cube root of 729
+        //9
+        console.log(Math.cbrt(729))//9        
+
+
+        //-1     >-1
+        //-0     >-0
+        //0      >0
+        //1      >1
+        //2      >1.25....
+        //Infinity >Infinity
+        //512     >8
+
+        // 8 2 > Math.pow >output > crbt > output >sqrt
+
+
+         // boolean
+                // > true   > 1
+                // > false  > 0
+
+        console.log(Math.cbrt(true))//1  > 1*1*1  >1
+        console.log(Math.cbrt(false))//0 > 0*0*0  >0
+
+        console.log(Math.sqrt(true))//1   >1*1  >1
+        console.log(Math.sqrt(false))//0  >0*0  >0
+
+        // For String
+        console.log(Math.cbrt("729"))//9
+        console.log(Math.cbrt("yuyuy"))//NaN
+        
+        //Math.pow()
+        // true false >1
+        // false true >0
+        // true true >1
+        // false false >1
+        console.log(Math.pow(true,true)) //1  >     1,1 >1
+        console.log(Math.pow(false,false)) //1  >   0,0 >1
+
+
+        // TT  >1
+        // FF  >1
+        // TF  >1
+        // FT  >0
+        console.log(Math.pow(1,1))
+        console.log(Math.pow(0,0))
+        console.log(Math.pow(1,0))
+        console.log(Math.pow(0,1))
+    </script>
+
+</body>
+</html>
