@@ -486,10 +486,43 @@
 
 
         let arr=[4,5,6,10,99,100,78,56,89,56,34]
+        console.log(arr)//11
         console.log(arr[0])//4
-        console.log(arr[3])
+        console.log(arr[3])//10
+        console.log(arr[8])//89
+        //passing the random values as per the length of the array , u need to get the array elements
         // 0 3 > index no of an array
         // index no > Random()
+        // 0 to length of the array
+          //0 -exclude the arr.length  > 0 -11 (11 is excluded)
+        // decimal values 10.99> 11
+        console.log(arr[10])
+        //10.999 > 10 > Math.floor
+        console.log(Math.floor(10.99))
+
+
+        console.log(Math.floor(Math.random()*arr.length))
+        let indexNum=Math.floor(Math.random()*arr.length)
+        console.log(arr[indexNum])
+        //Math.random()*arr.length > 
+        //Math.floor(Math.random()*arr.length) >
+        //Why storing as indexNum >
+        //arr[indexNum] >
+
+        var arr1=[90,true,"hello",90,78,56,45,67,34,"fumika","poonam"]
+        console.log(Math.floor(Math.random()*arr1.length))
+        let indexNum1=Math.floor(Math.random()*arr1.length)
+        console.log(arr[indexNum1])
+        let getValue=arr[indexNum1]// get something 90 ||78 ||hello|| fumika
+        let newarr=[];
+        // whatever the output , i will store in empty arary
+        //push method
+        newarr.push(getValue)
+        console.log(newarr)
+        //[90,78,"hello","fumika"]
+
+      
+
 
 
 
