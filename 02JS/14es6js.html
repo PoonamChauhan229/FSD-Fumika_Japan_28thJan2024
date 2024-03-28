@@ -27,6 +27,53 @@
         console.log("a value is "+ a +" and b value is "+b)
 
         // a:5 and b:20
+        console.log("a:"+a+" and b:"+b)
+        //es6
+        //template literals
+        // ``> back ticks
+        //`write whatevwer we want to console`
+        //`normal string + javscript ${js} `
+        console.log(`a value is ${a} and b value is ${b}`)
+        console.log(`a:${a} and b:${b}`)
+       
+        let temp=30.5
+        let day="sunny"
+        let feels_like="hot"
+        //Weather is too hot , may be becaues its sunny and also temperature is 30.5
+
+        let name="fumika"
+        let learning="javascript"
+        let employment_status="working"
+        let performance="remarkable"
+        // Fumika is currently working and her performance is remarkable and side by side she is managing to learn javascript as well
+
+
+        //Rest operator >> rest parameter
+
+        // let arr=67,56,89,90
+        // using a function , perform addition
+        //arrow function better to use
+
+        function sum(a,b,c,d,e,f,g,h){
+            console.log(a+b+c+d+g+h)
+        }
+        sum(67,56,89,90,89,90,45,89)
+//67,56,89,90,89,90,45,89,67,56,89,90,89,90,45,89,67,56,89,90,89,90,45,89,67,56,89,90,89,90,45,89
+
+// rest pareamets
+// ...args >> we follow 
+// ...rest
+// ...fumika
+
+
+        function add(...args){
+            console.log(args)//array
+            //sum operation
+            
+
+        }
+        add(67,56,89,90,89,90,45,89,67,56,89,90,89,90,45,89,67,56,89,90,89,90,45,89,67,56,89,90,89,90,45,89)
+
     </script>
 </body>
 </html>
