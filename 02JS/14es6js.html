@@ -74,6 +74,71 @@
         }
         add(67,56,89,90,89,90,45,89,67,56,89,90,89,90,45,89,67,56,89,90,89,90,45,89,67,56,89,90,89,90,45,89)
 
+
+        function myFun(a, b, ...manyMoreArgs) {
+            console.log("a", a);//one
+            console.log("b", b);//two
+            console.log("manyMoreArgs", manyMoreArgs);//["three", "four", "five", "six"]
+        }
+
+        myFun("one", "two", "three", "four", "five", "six");
+
+        //... rest > paramater
+        //...spread > use it >spreading
+
+        var arr=[1,2,3,4,5]
+        console.log(arr)
+        console.log(...arr)
+
+        // array method > same output
+        // join()
+        // spread operator > unpackaging the items from an array/object
+        
+        let nums=[1,2,3]
+
+        function abc(a,b,c){
+            console.log(a,b,c)
+            console.log(a+b+c)//7
+        }
+        abc(...nums)//argumnets
+        abc(...arr)
+
+        let obj={name:"xyz",age:25}
+        console.log(obj)
+        console.log({...obj})// its making a copy of orginal object
+        // cloning of the object
+
+        // we can do merge the array object
+        let obj1={name1:"pqr",age1:25}
+        let obj2={name2:"abc",age2:27}
+    //    console.log(obj1,obj2)
+       console.log({...obj1,...obj2})
+
+       // array merging
+       let arr2=[56,78,90]
+       let arr3=[3,45,6]
+        // try array merging
+        console.log([...arr2,...arr3])
+        console.log([56,78,...arr3,90])
+
+        const parts = ["shoulders", "knees"];
+        const body = ["head", ...parts, "and", "toes"];
+        console.log(body)
+
+        let arr4=[78,89,90]
+        console.log(...arr4)
+        function xyz(a,b,c){
+            console.log(a,b,c)//78 89 90
+            console.log(a*b*c)
+            console.log(a+b+c)
+        }
+        xyz(...arr4)
+
+        function xyz(z){
+            console.log(z)
+        }xyz(arr4)
+
+
     </script>
 </body>
 </html>
