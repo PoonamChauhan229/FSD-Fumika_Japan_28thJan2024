@@ -1,0 +1,77 @@
+File creation
+javascript > filename.javascript
+html       > filename.html
+
+
+
+When u create any project
+    html file
+    script file
+    css file
+
+HTML >HYPERTEXT MARKUP LANGUAGUE
+     >defines structure
+     >create a webpage
+     >create a static webpage/web application
+
+
+     coding > logic
+
+
+     eveerything is html we say it is as a tag
+     <></> 95% > use this
+     <> // opening tag <tagname>
+     </>// closing tag  </tagname>
+
+     </> 5% use this
+     </> self closing tag
+     <> self closing tag
+     <tagname/>
+     <tagname>
+    < -Angular bracket 
+
+    <!DOCTYPE html> -Tell us which HTML version we are using
+
+    <html></html> Acts as a wrapper + its says its in english language
+
+    <head></head> - meta title tags
+    meta tags > tellus additional info about the web page
+    title tag > title of th web page
+    body > whre everything is visible on the browser and this is the place where we are going to write.
+
+
+TAG > whenever you write in HTML , we take help of TAG
+TAG > few properties asscocited || inbuilt properties 
+
+self closing tag
+opening tag and closing tag
+
+heading tags
+h1 to h6 > opening tag closing tag
+TAG >only tag
+<h1></h1>
+<h2></h2>
+<h3></h3>
+<h4></h4>
+<h5></h5>
+<h6></h6>
+
+WHere to write the text/content?
+ELEMENT >tag+content
+<h1>content</h1>
+<h2>content</h2>
+<h3>content</h3>
+<h4>content</h4>
+<h5>content</h5>
+<h6>content</h6>
+
+
+paragraph tag
+<p></p> tag
+<p>content</p> ELEMENT
+
+https://www.lipsum.com/
+
+
+
+
