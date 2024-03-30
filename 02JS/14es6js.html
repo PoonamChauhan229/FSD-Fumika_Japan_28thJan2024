@@ -138,6 +138,120 @@
             console.log(z)
         }xyz(arr4)
 
+//using rest and spread together
+function pqr(...args){//rest
+    console.log(args)
+    console.log(...args)//spread
+}
+pqr(100,67,78,89,90)
+
+console.log(Math.max(100,20,40))
+console.log(Math.max(...arr4))//we want sperated items
+
+//destructuring
+
+var obj4={
+    name2: 'xyz',
+    age: 25,
+    course:"javascript",
+    interest:"learning"
+}
+//output > javascript
+console.log(obj4.name2)
+console.log(obj4.course)
+// console.log(name2)
+
+// es6 provides name2 cousre etc...
+//destructuring > react
+
+const {name2,course,javascript,interest}=obj4  //excat key name should be there
+console.log(name2)
+console.log(course)
+console.log(interest)
+//arry []
+//obj {}
+let arr56=["89","html"]
+console.log(arr56[0])
+console.log(arr56[1])
+//destructing
+const [rolno,topic]=arr56 // userdefined, no names are there
+console.log(rolno)
+console.log(topic)
+
+//
+let studetname="fumika";
+let rollId="45";
+let subject="javascript";
+let place="Japan";
+let mode="online";
+// using this can you create an object
+
+let obj67={
+ studetname:"fumika",
+ rollId:"45",
+ subject:"javascript",
+ place:"Japan",
+ mode:"online"
+}
+
+let obj68={
+ studetname:studetname,
+ rollId:rollId,
+ subject:subject,
+ place:place,
+ mode:mode
+}
+console.log(obj67)
+console.log(obj68)
+
+// key and value is same > no need to repeat
+//short hand
+let obj69={studetname,rollId,subject,place,mode}
+console.log(obj69)
+
+let fruit="orange"
+let eaten="poonam"
+let stay="india"
+
+// if else
+//ternary operator
+// (condition)?true value:false value
+
+
+let apple=100;
+// (apple<10)?"Ok":"Not ok"
+(apple<10)?console.log("ok"):console.log("Not ok")
+
+//dependant upon the age , he is eligible to vote 
+let age1=12;
+age1<25?console.log("Not eligible"):console.log("Eligible")
+
+//dependant upon the age , he is eligible to drink beer/juice
+const age = 26;
+const beverage = age >= 21 ? "Beer" : "Juice";
+console.log(beverage); // "Beer"
+
+//ternary using a function
+function getFee(isMember) {
+    console.log(isMember)
+  let output= isMember ? '$2.00' : '$10.00';
+  console.log(output)
+}
+getFee(true)
+getFee(false)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </script>
 </body>
