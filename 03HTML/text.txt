@@ -73,5 +73,27 @@ paragraph tag
 https://www.lipsum.com/
 
 
+op cl
+heading tag> h1 to h6 > op cl
+paragraph tag <p></p> > op cl
+anchor tag <a></a>    > op cl
+
+self cl
+image tag <img/>      > selfcl 
+hr        <hr/>       > selfcl
+br        <br/>       > selfcl
+
+block elements inline elements
+block > occupies entire width of the screen irrespective of the content
+     > next line
+     h1 to h6 , p,hr 
+inline > occupies only the content
+       > same line
+
+this comes under property of display 
+
+<span>content</span> >op cl tag 
+
+
 
 
