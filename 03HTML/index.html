@@ -174,5 +174,90 @@ section > similar set of elements
     <img src="./logo_image.svg" alt="logo_system" height="100" width="100"/>
 </section>
 
+<i></i>
+<b></b>
+<s></s>
+<u></u>
+<sub></sub>
+<mark></mark>
+<br/>
+<hr/>
+
+
+<!-- input elements -->
+<!--  user/client-->
+<!-- 
+inline
+border around the inputbox
+
+ -->
+
+<input type="text" name="" id="" value="Fumika" >
+<!-- //type -->
+<!-- //value : predfeined info /prefilled info-->
+<!-- placeholder acts like a label to you > what info needed to be feeded-->
+<input type="text" name="" id="" value="" placeholder="UserName">
+
+<input type="email" name="" id="" placeholder="Enter email">
+<br/>
+<input type="password" name="" id="">
+
+<br><br>
+<hr>
+
+<!-- bind=> label+input
+    for attribute > label tag
+    id attribure  > input tag
+    both attribute will be same> binding will happen
+-->
+<label for="fullname">FullName:</label>
+<input type="text" name="" id="" value="" > <br><br>
+
+<label for="">Email:</label>
+<input type="email" name="" id="fullname" > <br><br>
+
+<label for="pass">Password:</label>
+<input type="password" name="" id="pass"><br><br>
+
+<!-- out of these 3 only 1 should be selected
+group them
+name attribute > group > give same name attribute value
+ex: gender category
+radio > only for 1 selection
+checkbox > multiple selections
+-->
+<input type="radio" name="gender" id="female">
+<label for="female">Female</label>
+
+<input type="radio" name="gender" id="male">
+<label for="male">Male</label>
+
+<input type="radio" name="gender" id="other">
+<label for="other">Others</label>
+
+<!-- Age > minor major senior  -->
+
+<br><br>
+
+<input type="submit" value="Submit">
+<!-- input > button => submit,reset => we dont need label and binding  because value attribute is manadatory
+no need of placeholder/ label tag
+-->
+<br>
+<!-- We select from below options > bind => label  -->
+<label for="cards">Choose a Car:</label>
+<select id="cars">
+    <option value=""></option>
+    <option value="volvo">Volvo</option>
+    <option value="bmw">BMW</option>
+    <option value="audi">Audi</option>
+</select>
+
+<!-- selects > country -->
+
+<br>
+<br>
+<br>
+<br>
 </body>
 </html>
