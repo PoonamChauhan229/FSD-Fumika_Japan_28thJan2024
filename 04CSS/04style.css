@@ -1,0 +1,21 @@
+
+/* external css
+style tag ❌❌❌
+style attaribute ❌❌❌
+*/
+
+p{
+    color:fuchsia !important;
+    background-color: burlywood;
+    font-size: 35px;
+}
+/* How will i connect the files */
+/* link tag */
+/* above the title tag */
+/* external css file */
+
+/* internal
+
+inline 
+
+external */
