@@ -12,11 +12,29 @@
         }
         span{
             background-color: pink;
-            width: 150px;
+            width: 200px;
             display: block;
         }
-        a{
+        .test01{
             display: block;
+            width:200px;
+            background-color: blueviolet;
+            color: white;
+        }
+        .test02{
+            background-color: purple;
+            color: white;
+            width:200px;
+            /* you want block prperty and its hould be a inline element*/
+            display: inline-block;
+            
+        }
+        p{
+             /* you want block prperty and its should be a inline element*/
+            background-color: chocolate;
+            display: inline-block;
+            width: 500px;
+
         }
     </style>
 </head>
@@ -25,8 +43,13 @@
     <div>World</div> 
     <!-- inline element > width not applicable-->
     <span>Hello</span>
-    <a href="">Hello</a>
-    <a href="">Hello</a>
+    <a href="" class="test01">Hello</a>
+    <a href="" class="test01">Hello</a>
+    <hr>
+    <a href="" class="test02">Lorem ipsum dolor sit amet.</a>
+    <a href="" class="test02">Lorem ipsum dolor sit amet.</a>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, repudiandae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, repudiandae.</p>
     
 </body>
 </html>
