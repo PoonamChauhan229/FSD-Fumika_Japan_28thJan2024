@@ -1,0 +1,33 @@
+.navitems{
+    display: inline-block;
+    /* border:1px solid red; */
+    padding: 0 3px 8px 3px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:white;
+    background-color: rgb(5, 5, 53);
+    font-size: 15px;
+}
+.logo{
+    margin-right: 49%;
+}
+.navbar{
+    background-color: rgb(12, 2, 37);
+}
+.navLogoIcons{
+    font-size: 28px;          
+}
+.navIcons{
+    font-size: 21px;
+}
+.travelImages{
+    margin-top: 5px;;
+}
+.travelSample{
+    height: 140px;
+    width:16.39%;
+    border-radius: 5%;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
