@@ -52,4 +52,16 @@ a{
 .valueli{
     color: rgb(6, 24, 6);
 }
+.fontIcons{
+    color: purple;
+    font-size: 23px;
+    border: 1px solid red;
+    padding: 3px;
+    margin:1px
+}
 
+.aboutContainer{
+    background-image: url('../assets/travelimage7.jpg');
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
