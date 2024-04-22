@@ -65,3 +65,37 @@ a{
     background-repeat: no-repeat; 
     background-size: cover;
 }
+.testimonialFeedback{
+    border: 1px solid black;   
+}
+.imageParent{
+    background-image: url('../assets/travelimage2.cms');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height:300px;
+    width:40%;
+    position: relative;
+    border-radius: 5%;
+    margin-top: 2%;
+    display: inline-block;
+    
+}
+.imageChild{
+    background-image: url('../assets/travelimage7.jpg');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height:45%;
+    width:40%;
+    position: absolute;
+    top:55%;
+    left:0%;
+    box-shadow:10px 10px 30px 40px rgba(67, 4, 6, 0.6);
+    border-radius:5%;
+}
+
+.testimonialStory{
+    display: inline-block;
+    width:50%;
+    position: relative;
+    bottom:155px;
+}
