@@ -1,0 +1,132 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-size:15px; */
+}
+h2{
+    margin:0 0 10px 0;
+}
+article p{
+    margin:0 0 10px 0;
+    font-size: 15px;
+    text-align: justify;
+}
+header{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    background-color: #768e45;
+    padding:15px 0;
+}
+#menu ul li a{
+    text-decoration: none;
+    color: white;
+}
+#menu ul{
+    display: flex;  
+    list-style-type: none;
+      
+}
+#menu ul li{
+    padding: 10px;
+}
+#logo{
+    margin:0 auto;
+    font-size: 30px;
+}
+#logo a{
+    color:#fff;
+    text-decoration: none;
+}
+
+
+#social-links ul{
+    display: flex;  
+    list-style-type: none;
+      
+}
+#social-links ul li{
+    padding: 10px;
+    color:white
+      
+}
+#social-links ul li a{
+     color:white;
+     font-size:25px;
+      
+}
+.main{
+    display: flex;
+}
+aside{
+    flex : 0 0 20vw;
+    background-color: beige;
+    padding:10px;
+}
+aside ul {
+   list-style-type: none;
+   padding:0;
+  
+}
+
+aside ul li a{
+    text-decoration: none;
+    color:#768e45;
+    font-size: 14px;
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+
+}
+aside img{
+    width:100%;
+}
+article{
+    padding:12px;
+}
+.service-container{
+    display: flex;
+    justify-content: space-between;
+}
+.service-box{
+    border:1px solid #eeee;
+    padding:10px;
+    flex-basis: 30%;
+    max-width: 370px;
+    display: flex;
+    flex-direction: column;
+}
+.service-box h3{
+    margin:5px 0 10px;
+}
+.service-box p{
+    margin:0 0 10px;
+}
+.service-box img{
+    width:100%;
+}
+
+.call-to-action{
+    align-self: flex-start;
+    margin-top: auto;
+}
+.call-to-action a{
+    background-color: grey;
+    color: #fff;
+    display: block;
+    padding: 8px 13px;
+    text-align: center;
+    text-decoration: none;
+    border:2px solid transparent;
+}
+.footer{
+    background-color: #768e45;
+    text-align: center;
+    padding:15px 0;
+    color:#fff;
+}
