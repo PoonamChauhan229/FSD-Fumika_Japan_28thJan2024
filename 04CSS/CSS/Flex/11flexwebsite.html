@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            background-color: #768e45;
+            height: 45px;
+            
+        }
+        .navbarItem{
+            display: flex;
+            /* border: 1px solid red; */
+            width: 15%;
+            justify-content: space-between;
+        }
+           
+        .navbarsubitem{
+            width:7%;
+            font-size: 20px;
+        }
+        .navchild{
+            align-content:center;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbarItem">
+                <div class="navchild">Home</div>
+                <div class="navchild">About Us</div>
+                <div class="navchild">Contact</div>
+            </div>
+            <div class="navchild">Flex Layout</div>
+            <div class="navbarItem navbarsubitem">
+                <div class="navchild">😇</div>
+                <div class="navchild">🧡</div>
+                <div class="navchild">💥</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
