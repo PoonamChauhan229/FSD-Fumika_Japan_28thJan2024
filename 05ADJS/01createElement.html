@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page</title>
+</head>
+<style>
+    #idSection{
+        background-color: red;
+    }
+    h1{
+        border: 2px solid green;
+        margin-top: 0%;
+        margin-top: 5%;
+    }
+</style>
+<body>
+    <!-- Just the tenplate > in JS -->
+    <!-- <p>Hi Hello World From HTML</p>
+    <div>Hello Worls FROM JS</div> -->
+    <!-- Starting -->
+    <div>
+        <div>
+            <div>
+                <p>I am New to This DOM!!!</p>
+            </div>
+        </div>
+    </div>
+    <!-- Ending -->
+
+
+    <!-- New  -->
+    <div id="container">
+        <h1 class="subhedaing">Heading1</h1>
+        <h2 class="subhedaing">Heading2</h2>
+        <h3 class="subhedaing">Heading3</h3>
+        <div id="newHeading">
+            <h4>Heading1-DIV</h4>
+            <a href="www.google.com">Visit Google</a>
+        </div>
+    </div>
+
+    <div>
+        <h1>Heading1</h1>
+        <h2>Heading2</h2>
+        <h3>Heading3</h3>
+        <div id="newHeading">
+            <h4>Heading1-DIV</h4>
+        </div>
+    </div>
+
+
+    <!-- New End -->
+    <script>
+        // 3 keywords to declare in JS
+        // var let const
+        // let const
+
+        // let paraTest=document
+        console.log(document)
+        console.log(document.head)
+        console.log(document.title)
+        console.log(document.body)
+
+        // create a p tag dynamically
+        // create Element > Tag +Content
+        let paraTest=document.createElement('p')
+        console.log(paraTest)
+        paraTest.innerHTML="Hello World FROM JS"
+        console.log(paraTest)
+        // append()
+        // document > body
+        document.body.append(paraTest)
+
+        // 
+// innerHTML
+// innerText
+
+let paraTest30=document.createElement('p')
+console.log(paraTest30)
+paraTest30.innerHTML="XYZ"
+document.body.append(paraTest30)
+
+
+let divTest2=document.createElement('div')
+console.log(divTest2)
+divTest2.innerHTML="<h1>ABX</h1>"
+document.body.append(divTest2)
+
+let divTest3=document.createElement('div')
+console.log(divTest3)
+divTest3.innerText="<h1>ABX</h1>"
+document.body.append(divTest3)
+
+let divTest4=document.createElement('div')
+console.log(divTest4)
+divTest4.innerHTML=`<h1>ABD</h1>
+                    <h1>ABD</h1>`
+document.body.append(divTest4)
+
+let divTest5=document.createElement('div')
+divTest5.innerHTML=`
+        <h1>Heading1</h1>
+        <h2>Heading2</h2>
+        <h3>Heading3</h3>
+        <div id="newHeading">
+            <h4>Heading1-DIV</h4>
+        </div> 
+`
+document.body.append(divTest5)
+
+// setAttribute("attributeName","attributeValue")
+let divTest6=document.createElement('div')
+divTest6.innerText="Setting the Attribute"
+divTest6.setAttribute("id","idSection")
+divTest6.setAttribute("class","classSection")
+document.body.append(divTest6)
+
+let anchorTest6=document.createElement('a')
+anchorTest6.innerText="Setting the HREF"
+anchorTest6.setAttribute("id","idSection")
+anchorTest6.setAttribute("class","classSection")
+anchorTest6.setAttribute('href',"www.google.com")
+document.body.append(anchorTest6)
+
+
+//Dynamically the elememnt
+// Steps:
+// 1-createElement()  // creating the tag
+// 2-innerText/innerHTML // passing the content to the created tag
+// 3-setAttribute > id/class/any html attribute
+// 4-append > body/element > depending upon the scenario
+
+// 5-optional > style // helps up to add the style
+
+// Add style as well in JS
+
+let p100=document.createElement('p')
+p100.innerText="Optical Illusion Personality Test: What You See First Reveals Whether You Are Organised Or Spontaneous"
+p100.style.border="3px solid black";
+p100.style.width="400px";
+p100.style.padding="10px";
+p100.style.borderRadius="5%";
+p100.style.backgroundColor="green"
+p100.style.marginLeft="5px"
+
+document.body.append(p100)
+
+// method || property
+// > method > .methodName() ex- createElement() ,.map(),.filter(),|| array methods + string methods + json methods
+
+// > property > .propertyName ex - .length,.innerText,.innerHTML,.style   .... etc
+
+let div5=document.createElement('div')
+div5.style.border="1px solid red"
+div5.innerHTML=`
+                                                        <h1>1</h1>
+                                                        <h1>2</h1>
+                                                        <h1>3</h1>
+                                                        <div>
+                                                            <h1>4</h1>
+                                                            </div>
+                                       `
+document.body.append(div5)
+
+
+
+
+      
+</script>
+</body>
+</html>
