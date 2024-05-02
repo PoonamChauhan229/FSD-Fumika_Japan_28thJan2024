@@ -54,6 +54,7 @@
      <div class="test05">Fumika</div>
     >
 -->
+<span class="spantag"></span>
     
     <script>
         //createElement()
@@ -150,7 +151,25 @@
         //class
         //tag
         // 48-52
+        // h5tagclass > 
+        
+        // document.querySelector > First element >> Prefer ids 
+        let result07=document.querySelector('.h5tagclass')
+        console.log(result07)
 
+        //document.querySelectorAll > All elements 
+        let result08=document.querySelectorAll('.h5tagclass')
+        console.log(result08)
+
+        let result09=document.querySelector('#h5tagid')
+        console.log("querySelector",result09)
+
+        //document.querySelectorAll > All elements > in an array
+        let result10=document.querySelectorAll('#h5tagid')
+        console.log("querySelectorAll",result10)
+
+        console.log(document.getElementsByClassName('spantag'))
     </script>
+
 </body>
 </html>
