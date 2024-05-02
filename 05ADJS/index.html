@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <div id ="test01">Google is best online searching tool</div>
+    <div id ="test02">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, soluta.</div>
+    <div id="test03"></div>
+
+  <div class="test04"></div>
+  <div class="test04"></div>
+  <div class="test04"></div>
+  <div class="test04"></div>
+  <div class="test04"></div>
+
+  <!-- Question  -->
+  <div class="test05">
+    <div class="test05">
+        <div class="test05">
+            <div class="test05 test06"></div>
+            <div class="test05 test06"></div>
+            <div class="test05 test06"></div>
+            <div class="test05 test06"></div>
+            <div class="test05 test06"></div>
+        </div>
+    </div>
+  </div>
+
+
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+
+  <h5 id="h5tagid"></h5>
+
+  <h5 class="h5tagclass"></h5>
+  <h5 class="h5tagclass"></h5>
+  <h5 class="h5tagclass"></h5>
+  <!-- output.innerText
+     <div class="test05">Fumika</div>
+    >
+-->
+    
+    <script>
+        //createElement()
+
+        //Target the elements which are in HTML page
+        // document >>> using
+        //Element > Tag+Content
+        //ex : p tag
+        //<p></p> tag
+        //<p>Hello World</p> Tag (p)+ Content (Hello World) ||| Element
+        // document.getElementById(idname)
+       //idname in double quotes
+        const result01=document.getElementById('test01')
+        console.log(result01)
+
+        const result02=document.getElementById('test02')
+        console.log(result02)
+
+        //innerHTML ||innerText
+        test01.innerText="ABC"
+        //styling
+        test02.style.backgroundColor="green"
+
+        // document.getElementsByClassName('classname')
+        // Diff
+        // id || class
+        // Element || Elements
+        // only 1 || multiple times
+
+        let result03=document.getElementsByClassName('test04')
+        console.log(result03)
+        // >array
+
+        //u havre use a forloop > DOM > updates
+        // for(initilize,condition,increment,decrement)
+
+        for(var i=1;i<=5;i++){
+            console.log(i)
+        }
+
+        //array > i=0 ||index starts with 0
+        //array > araay.length
+        for(var i=0;i<=result03.length;i++){
+            // console.log(result03[i])
+            let output=result03[i]
+            console.log(output)
+            // output.innerText="Hello World"
+        }
+
+        // for loop
+        // pur for loop 2 times table
+        // 2*1=2
+        // 2*2=4
+        // 2*3=6
+        // 2*4=8
+
+        // ==> 2 is constant
+        // ==> i value
+
+
+        for(var i=1;i<=10;i++){
+            console.log(2*i)
+        }
+
+        let num=20;
+        for(var i=1;i<=10;i++){
+            console.log(num*i)
+        }
+
+
+        let result04=document.getElementsByClassName('test06')
+        console.log(result04)
+        for(var i=0;i<result04.length;i++){
+            // console.log(result04[i])
+            let output=result04[i]
+            console.log(output)
+            output.innerText="Fumika"            
+        }
+
+        // document.getElementsByTagName()
+        let result05=document.getElementsByTagName('div')
+        console.log(result05)
+
+        let result06=document.getElementsByTagName('p')
+        console.log(result06)
+        // array 
+        // BREEDS AVAILABLE FOR ADOPTION
+
+        // document.querySelector > CSS Selector >  .classname || #idname
+        // document.querySelectorAll > CSS Selector .classname || #idname
+
+
+        // id
+        //class
+        //tag
+        // 48-52
+
+    </script>
+</body>
+</html>
