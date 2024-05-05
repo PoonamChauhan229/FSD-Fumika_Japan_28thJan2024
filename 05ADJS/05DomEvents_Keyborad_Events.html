@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- on the document then u should use on bosy otherwise no  -->
+<!-- <body onkeypress="test2(event)"> -->
+    <body>
+    <p>KeyPress</p>
+    <input type="text" onkeypress="test(event)">
+    <hr/>
+    <p>KeyDown</p>
+    <input type="text" name="" id="" onkeydown="test5(event)">
+    <hr>
+    <p>KeyDown Example</p>
+    <input type="text" onkeydown="test6(event)">
+    <script>
+        function test(event){
+            console.log(event)
+        }
+        function test2(event){
+            console.log("Hello KyPress")
+            console.log(event)
+            console.log(event.key,event.keyCode)
+        }
+
+        function test5(event){
+            console.log(event)
+            // spacebar > thankyou for visiting - - show keypress alphabet/button
+            //enter > you dont have a correct passcode , u cannot enter - show keypress alphabet/button
+        }
+        function test6(event){
+            console.log(event)
+            if(event.code=="Space"){
+                console.log("thankyou for visiting,Pressed Button -",event.code)
+            }
+            else if(event.code=="Enter"){
+                console.log(" you dont have a correct passcode , u cannot enter, Pressed Button -",event.code)
+            }
+            else{
+                console.log("Pressed Wrong Button-,",event.key)
+            }
+        }
+
+        // keypress
+        // keydown
+        // keyup
+
+
+
+        // refer 
+
+        // MouseEvents
+        // mouseup
+        // mousedown
+
+        //InputEvent
+        //onfocus
+
+        //KeyboradEvent
+        //keyup
+
+        // Website update?
+    </script>
+</body>
+</html>

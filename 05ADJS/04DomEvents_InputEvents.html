@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--click event > POinter Event -->
+    <!-- oninput      > Input Event -->
+    <!-- onblur -->
+
+    <input type="text" name="" id="" value="" oninput="display(event)">
+    <input type="text" name="" id="" value="" onblur="test3(event)">
+
+    <!-- onchange Event -->
+    <select name="" id="mySelect" onchange="test()">
+        <option value="ABC">ABC</option>
+        <option value="PQR">PQR</option>
+        <option value="SUV">SUV</option>
+    </select>
+    <p id="demo"></p>
+    <script>
+           //oninput
+           function display(event){
+            console.log(event)//Input event
+            console.log(event.target.value)
+            console.log(`My name is ${event.target.value}`)
+        }
+
+        //onchnage
+        function test(){
+            console.log("Function called")
+            let a=document.getElementById('mySelect').value
+            console.log(a)
+            let ptag=document.getElementById('demo')
+            ptag.innerHTML=`The selection is ${a}`
+        }
+         //oninput      > Input Event
+        //onblur
+
+        //onblur
+        function test3(event){
+            console.log(event)//Focus Event
+            console.log(event.target.value)
+            console.log(`My name is ${event.target.value}`)
+        }
+    </script>
+</body>
+</html>

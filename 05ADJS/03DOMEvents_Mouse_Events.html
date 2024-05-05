@@ -14,10 +14,6 @@
     <button onclick="sum(event)">Click Me Sum</button>
     <button onclick="test()">Click Again</button>
 
-    <input type="text" name="" id="" value="" oninput="display(event)">
-    <input type="text" name="" id="" value="" onblur="test3(event)">
-
-
     <script>
         function sum(event){
             console.log(event)//Pointer event
@@ -35,22 +31,9 @@
         }
         // console.log("My name is Poonam")
 
-        //oninput
-        function display(event){
-            console.log(event)//Input event
-            console.log(event.target.value)
-            console.log(`My name is ${event.target.value}`)
-        }
+     
         // click event > POinter Event
-        //oninput      > Input Event
-        //onblur
-
-        //onblur
-        function test3(event){
-            console.log(event)//Focus Event
-            console.log(event.target.value)
-            console.log(`My name is ${event.target.value}`)
-        }
+       
 
 
 
