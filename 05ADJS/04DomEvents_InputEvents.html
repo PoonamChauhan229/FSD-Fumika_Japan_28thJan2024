@@ -9,42 +9,55 @@
     <!--click event > POinter Event -->
     <!-- oninput      > Input Event -->
     <!-- onblur -->
+    <p>oninput Event</p>
+    <input type="text" name="" id="" value="" oninput="testOnInput(event)">
 
-    <input type="text" name="" id="" value="" oninput="display(event)">
-    <input type="text" name="" id="" value="" onblur="test3(event)">
-
-    <!-- onchange Event -->
-    <select name="" id="mySelect" onchange="test()">
+    <p>onblur Event</p>
+    <input type="text" name="" id="blurInputBox" value="" onblur="testOnBlur(event)">
+    
+    <p>onchange Event</p>
+    <select name="" id="mySelect" onchange="testOnChange()">
         <option value="ABC">ABC</option>
         <option value="PQR">PQR</option>
         <option value="SUV">SUV</option>
     </select>
+    <!-- To display the selection on Onchange Event -->
     <p id="demo"></p>
+
+    <!-- onFocus -->
+    <p>onFocus</p>
+    <input type="text" name="" id="" onfocus="testOnFocus(event)">
     <script>
-           //oninput
-           function display(event){
+        //oninput
+        function testOnInput(event){
             console.log(event)//Input event
             console.log(event.target.value)
             console.log(`My name is ${event.target.value}`)
         }
 
+         //onblur
+        function testOnBlur(event){
+            console.log(document.getElementById('blurInputBox').value)//Input
+            console.log(event)//Focus Event
+            console.log(event.target.value)
+            console.log(`My name is ${event.target.value}`)
+        }
+
         //onchnage
-        function test(){
+        function testOnChange(){
             console.log("Function called")
             let a=document.getElementById('mySelect').value
             console.log(a)
             let ptag=document.getElementById('demo')
             ptag.innerHTML=`The selection is ${a}`
         }
-         //oninput      > Input Event
-        //onblur
 
-        //onblur
-        function test3(event){
+        //onfocus
+        function testOnFocus(event){
             console.log(event)//Focus Event
-            console.log(event.target.value)
-            console.log(`My name is ${event.target.value}`)
         }
+        
+        
     </script>
 </body>
 </html>
