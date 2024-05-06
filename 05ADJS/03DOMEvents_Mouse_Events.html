@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    Event	Occurs When
+    Event	        Occurs When
     onclick	        A user clicks on an element
     oncontextmenu	A user right-clicks on an element
     ondblclick	    A user double-clicks on an element
@@ -28,24 +28,19 @@
     <button onclick="sum(event)">Click Me Sum</button>
     <button onclick="test()">Click Again</button>
     <p onmousedown="testOnMouseDown(event)">MouseDown</p>
-    <p onmouseup="testOnMouseUp(event)">onmouseup	    A mouse button is released over an element </p>
+    <p onmouseup="testOnMouseUp(event)">onmouseup A mouse button is released over an element </p>
 
     <script>
         function sum(event){
             console.log(event)//Pointer event
             console.log(2+2)
         }
-       
         // onClick Eveent
-
         // Event > When u perform an action , an event will be triggered
-
         // 1st way > directly to HTML
-
         function test(){
             console.log("Test Function")
         }
-        
         function testOnMouseDown(event) {
             console.log("OnMouseDown Function")
             console.log(event)//Mouse event   
@@ -55,7 +50,9 @@
             console.log("OnMouseUp Function")
             console.log(event)//Mouse event
         }
-       
+       document.onkeypress = function(event){
+        console.log(event)
+    }
 
 
 
