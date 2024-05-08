@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="test()">Click Me</button>
+
+    <button id="btn1" >Click Again</button>
+
+    <!-- input elements -->
+    <input type="text">
+
+    <form id="formSubmit">
+        <!-- form elements -->
+        <input type="text" name="" id="">
+        <input type="text" name="" id="">
+        <input type="text" name="" id="">
+        <input type="text" name="" id="">
+        <!-- form submission -->
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        function test(){
+            console.log("Click Me")
+        }
+
+        // Target the Element and we are attaching the event listener
+        // We dont write on infront of event, events are written in quotes
+        // Syntax:
+        // let test1=document.getElementById('idname')
+        // test1.addEventListener('eventname',()=>{...//block of code})
+
+        let btn1Test=document.getElementById('btn1')
+        btn1Test.addEventListener('click',()=>{
+            console.log("Btn is clicked again")
+        })
+
+        let formSubmitTest=document.getElementById('formSubmit')
+        formSubmitTest.addEventListener('submit',(event)=>{
+            event.preventDefault()
+            console.log("Form Submitted")
+        })
+
+
+    </script>
+</body>
+</html>
