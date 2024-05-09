@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="" alt="" id="displayFlags">
+    <!-- 
+
+        API > interacting with the server to get the data
+            > retriving anything from the server > GET REQUEST
+
+        WE   WAITER  CHEF(KITCHEN)
+        REQ  API     SERVER
+     -->
+
+     <!-- create an XHR OBJECT   object > new keyword-->
+     <!-- XMLHTTP REQUEST -->
+     <!-- tradinational method -->
+     <script>
+        //create an XHR object
+        var req=new XMLHttpRequest()
+        // https://jsonplaceholder.typicode.com/todos
+
+        // console.log(req)
+
+        // Steps> open the connection ||GET ,url
+            // req.open('GET','https://jsonplaceholder.typicode.com/todos')
+            req.open('GET','https://restcountries.com/v3.1/all')
+
+        //      > sending the connection ||initiate the bridge
+            req.send()
+        //      >wait for the server response >onload()
+
+        //onload events
+        //window events > annoymous function
+            req.onload=function(){
+                // console.log(""Waiting for server response...")
+                // console.log(req.response)
+                console.log(typeof(req.response))
+                //We cant use string 
+                //parse the data > convert from string to object
+                let data=JSON.parse(req.response)
+                console.log(data)
+                //can you get all the title
+                // map
+                // data.map((element,index)=>console.log(`My userId is ${element.userId},task given to me was ${element.title} and status of task is ${element.completed}`))
+
+                // let res1=data.map(element=>`My userId is ${element.userId},task given to me was ${element.title} and status of task is ${element.completed}`)
+                // console.log(res1)
+
+                // ? > optional chaning + data is not present for few feild ? > skip and go to next level
+                for(var i=0;i<=data.length;i++){// 250 times > it will 250 image + h6
+                    console.log(data[i]?.flags?.png)
+                    // i didnt had the element
+                    let imageTag=document.createElement('img')
+                    imageTag.setAttribute('src',data[i]?.flags?.png)
+                    let h6Tag=document.createElement('h6')
+                    h6Tag.innerHTML=data[i]?.name?.common
+                    document.body.append(imageTag,h6Tag)
+
+                    //i have a tag in html
+                    // let displayFlagsTest=document.getElementById('displayFlags')
+                    // console.log(displayFlagsTest.src)
+                    // displayFlagsTest.src=data[i]?.flags?.png 
+                    //250 countries 1 img tag > 250 flags  > 250 image tag
+
+                }
+            }
+
+
+
+     </script>
+</body>
+</html>
