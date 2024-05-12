@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let p=new Promise(()=>{})
+        console.log(p)
+
+        let p1=new Promise((resolve,reject)=>{
+            resolve('Yes')
+        })
+        console.log(p1)
+        p1.then((value)=>console.log(value))
+
+        let p2=new Promise((resolve,reject)=>{
+            reject('No')
+        })
+        console.log(p2)
+        p2.catch((error)=>console.log(error))
+
+        let p3=new Promise((resolve,reject)=>{
+            resolve("Welcome")
+            reject("not Welcome")// ignored
+        })
+        console.log(p3)
+        p3.then((value)=>console.log(value))
+
+        let p4=new Promise((resolve,reject)=>{
+            reject("dont come")
+            resolve("come")  //ignored          
+        })
+        console.log(p4)
+
+        p4.catch((error)=>console.log(error))
+
+        //if condition >>> condition
+        // let time="3:00"
+        // let time="2:30"
+        let time="4:00"
+        let p5=new Promise((resolve,reject)=>{
+            if(time=="3:00"){           
+            resolve("i will come") //fulfilled
+            }
+            else if(time=="2:30"){
+                resolve("On the way")//fulfilled
+            }
+            else if(time=="2:00"){
+                resolve("Getting ready")//fulfilled
+            }
+            else if(time=="1:30"){
+                resolve("Fresshen Up")//fulfilled
+            }
+            else if(time=="1:00"){
+                resolve("Winded up the work")//fulfilled
+            }
+            else{
+                reject("i wont come")
+            }        
+        })
+        console.log(p5) 
+        
+        // vote > age 18 > vote 
+                // <cant vote
+                // u take it from user
+                // use promise > resolve/reject
+
+        //values > state of the promise
+        // >.then()
+        // function as a paremeter >>()=>{}
+        //(value)=>console.log(value)
+        //relevance
+
+        //errors
+        // >.catch()
+        //hnadling error >> Uncaught (in promise....)will be removed from the console
+        //function as a parametr >> ()=>{}
+        //(error)=>console.log(error)
+        //relevance
+
+        p5.then((value)=>console.log(value)).catch((error)=>console.log(error))
+        
+        </script>
+    </script>
+</body>
+</html>
