@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- callback  -->
+
+    <!--  
+        function inside a function
+        abc() main function > dependant on the 
+
+
+
+    -->
+    <script>
+        function abc(){
+            console.log("abc")
+            function xyz(){
+                console.log("abc+xyz")
+            }
+        }
+        abc()
+
+        // inbuilt function
+        //function > functoin
+        // setTimeout(()=>console.log("abc1234"),1000)
+       
+        // var abc=document.getElementById('test')
+        // abc.addEventListener('click',()=>{
+        //     console.log("Btn is clicked again")
+        // })
+
+        // arr.map(()=>console.log("abc"))
+        // all the examples of calbacks 
+        // We should also know, how can we create it.
+
+        //  if else 
+        //  come up with more examples (5-7 examples)
+
+        //every some map reduce filter setTimeout addEventListners .... etc
+        
+        setTimeout(()=>console.log("Old Hello"),500)
+
+        let test=()=>console.log("NewHello") 
+
+        setTimeout(test,1000) // function inside a function > setTimeOut >test function
+
+        //////
+        function one(){
+            console.log("one")
+        }
+
+        function two(){
+            console.log("two")
+            // one()
+            // one
+        }
+        two()
+
+        // inside two>> one 
+        // this is not a callback
+        // calling of the function should be dependant on main function
+        // two() >> one should be called automatically  
+        // in the above example thats not the case , we will have to call the function
+
+        function three(){
+            console.log("three")
+        }
+
+        let five=()=>console.log("five")
+
+        function four(callback,cbk1){
+            console.log("four")
+            callback()
+            cbk1()
+        }
+        four(three,five)//args
+
+        // 1 > display name > responsible for printing
+        // 2=> take the name 
+        // 3=> callback
+        // takenum("fumika",displayname)
+
+
+
+
+        
+
+    </script>
+
+
+</body>
+</html>

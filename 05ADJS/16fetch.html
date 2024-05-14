@@ -9,10 +9,38 @@
     working with API 
     XMLHTTPREQUEST > used when JS introduced
 
-    fetch()// method to retrive the data from api
+    fetch()// method to retrive the data from api // introduced at later stage
     <script>
         let req=fetch('https://restcountries.com/v3.1/all')
-        console.log(req)
+        // console.log(req)
+        // req.then(value=>value.json()).then((res)=>console.log(res))
+        //string => .json()// into object
+        req
+        .then((value)=>value.json())//
+        .then((res)=>{
+            console.log(res)
+            // for loop >>>>
+            for(var i=0;i<=res.length;i++){// 250 times > it will 250 image + h6
+                    console.log(res[i]?.flags?.png)
+                    // i didnt had the element
+                    let imageTag=document.createElement('img')
+                    imageTag.setAttribute('src',res[i]?.flags?.png)
+                    let h6Tag=document.createElement('h6')
+                    h6Tag.innerHTML=res[i]?.name?.common
+                    document.body.append(imageTag,h6Tag)
+            }
+        })// array 
+
+        //2 apples > 
+        // F=> 7th  (2)
+        // Frien1 => 6th  === (2)
+
+        //=> 3rd Fllor ===(2)
+
+        // Function 
+    //  data at multiple places > return keyword
+// arraow in 1 line >> we can skip return keyword
+
     </script>
 </body>
 </html>

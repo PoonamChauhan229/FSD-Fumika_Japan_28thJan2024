@@ -83,7 +83,45 @@
 
         p5.then((value)=>console.log(value)).catch((error)=>console.log(error))
         
-        </script>
+
+        let p6=new Promise((resolve,reject)=>{
+            if(true){
+                setTimeout(()=>{
+                resolve("Timer Started1")
+            },1000)
+            }else{
+                reject("Timer Rejected")
+            }
+        })
+        // console.log() is missing
+        // console.log(p6)
+        let p7=new Promise((resolve,reject)=>{
+            if(true){
+                setTimeout(()=>{
+                resolve("Timer Started2")
+            },2000)
+            }else{
+                reject("Timer Rejected")
+            }
+        })
+        let p8=new Promise((resolve,reject)=>{
+            if(true){
+                setTimeout(()=>{
+                resolve("Timer Started3")
+            },3000)
+            }else{
+                reject("Timer Rejected")
+            }
+        })
+
+        p6.then((value)=>console.log(value)).catch((error)=>console.log(error))
+        p7.then((value)=>console.log(value)).catch((error)=>console.log(error))
+        p8.then((value)=>console.log(value)).catch((error)=>console.log(error))
+
+        Promise.all([p6,p7,p8]).then((value)=>console.log(value)).catch(error=>console.log(error))
+       
+       
+       </script>
     </script>
 </body>
 </html>

@@ -39,7 +39,7 @@
             req.onload=function(){
                 // console.log(""Waiting for server response...")
                 // console.log(req.response)
-                console.log(typeof(req.response))
+                console.log(typeof(req.response))//string
                 //We cant use string 
                 //parse the data > convert from string to object
                 let data=JSON.parse(req.response)
