@@ -84,8 +84,53 @@
         // 3=> callback
         // takenum("fumika",displayname)
 
+        function were(){
+            console.log("CBK Function")
+        }
+
+        function when(callback){
+            callback()
+        }
+        when(were)
 
 
+        function were1(x,y){
+            console.log("CBK Function1",x,y)
+        }
+
+        function when1(a,callback,b){//a=>fumika b=>poonam
+            callback(a,b)///were1 function
+        }
+        when1("fumika",were1,"poonam")
+
+
+        // 2times 
+
+        // pass 
+
+
+        // 1 > display name > responsible for printing
+        // 2=> take the name 
+        // 3=> callback
+        // takenum("fumika",displayname)
+
+        function displayscores(score){
+            console.log("My score is :",score)
+        }
+
+        function takenum(callback,a){
+            callback(a)//displayname(a)//a=>79
+        }
+
+        takenum(displayscores,79)
+
+        //setTimeout(()=>{},1000)//args
+
+        // name display 
+
+
+
+      
 
         
 
