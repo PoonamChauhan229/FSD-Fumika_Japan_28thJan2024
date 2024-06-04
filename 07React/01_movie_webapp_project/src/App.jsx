@@ -1,16 +1,23 @@
 
+import { useState } from 'react'
 import './App.css'
-import Design from './Components/Design'
 import ImageDisplay from './Components/ImageDisplay'
 import Sample from './Components/Sample'
 import img1 from './assets/img1.jpg'
 import imga1 from './assets/imga1.avif'
 
-function App() {
+function App(){
+//useState > Hook > Functions
+const [age, setAge] = useState(28);
+// const [stateVaraible,setStateVariable()]=useState()
+let val=90;
 
   return (
     <>
     {/* any pices of Js > {} */}
+    <h2>{age}</h2>
+    <h2>{val}</h2>
+    <button onClick={()=>val++}>Click Val</button>
       {Sample()}
       <Sample/>
       <h1>Hello World</h1>
@@ -21,7 +28,7 @@ function App() {
       <ImageDisplay name={"Fumika100"}/>
       
     </>
-  )
+  ) 
 }
 
 export default App

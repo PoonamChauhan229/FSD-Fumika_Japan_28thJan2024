@@ -77,7 +77,7 @@ const ImageDisplay = (props) => {
   return (
     <div style={imageDesign}>
       {/* <Design imgsrc={img1} imgName={1}/>
-      <Design imgsrc={img2} imgName={2}/>
+      <Design imgsrc={img2} imgName={2} name={props.name}/>
       <Design imgsrc={img1} imgName={3}/>
       <Design imgsrc={img2} imgName={4}/>
       <Design imgsrc={img1} imgName={5}/>
