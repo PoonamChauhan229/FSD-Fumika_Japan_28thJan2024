@@ -2,7 +2,8 @@ import Design from "./Design"
 import img1 from '../assets/img1.jpg'
 import img2 from '../assets/imga1.avif'
 
-const ImageDisplay = (props) => {
+// const ImageDisplay = (props) => {
+  const ImageDisplay=({name})=>{
     //Props > Properties //parameters
     //like an attribute passing the args
     let imageDesign={
@@ -90,7 +91,7 @@ const ImageDisplay = (props) => {
       {/* {console.log(imageArray)} */}
       {
         imageArray.map((element)=>(
-          <Design imgsrc={element.imgsrc} imgName={element.id} name={props.name}/>
+          <Design imgsrc={element.imgsrc} imgName={element.id} name={name}/>
         ))
       }
     </div>

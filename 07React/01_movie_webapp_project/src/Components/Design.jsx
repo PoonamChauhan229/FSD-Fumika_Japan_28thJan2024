@@ -1,9 +1,9 @@
-// const Design = ({imgsrc,imgName}) => {//over the fly
+const Design = ({imgsrc,imgName,name}) => {//over the fly
 
-const Design = (props) => {
+// const Design = (props) => {
     //console.log(props)// object
     // destructing in javascript
-    const {imgsrc,imgName}=props// destructing in JS
+    // const {imgsrc,imgName}=props// destructing in JS
     
     let arr=[
       {roll:1,name:"Poonam"},
@@ -16,7 +16,7 @@ const Design = (props) => {
         {/* <div><b style={{fontSize:"25px"}}>Image-{props.imgName}</b></div>
       <img src={props.imgsrc} alt="" height={200} width={317.5}/> */}
 
-      <div><b style={{fontSize:"25px"}}>Image-{imgName}-{props.name}</b></div>
+      <div><b style={{fontSize:"25px"}}>Image-{imgName}-{name}</b></div>
       <img src={imgsrc} alt="" height={200} width={317.5}/>
 
       {
