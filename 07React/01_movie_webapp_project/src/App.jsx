@@ -22,7 +22,8 @@ let val=90;
     <h2>JS-{val}</h2>
     <button onClick={()=>val++}>Click Val</button>
     <button onClick={()=>{
-      setAge(age=age+1)
+     // setAge(age=age+1)
+     setAge(20)
       }}>Click Age</button>
 
       <h1 onClick={()=>setDisplay("Welcome To Tokoyo")}>{display}</h1>
