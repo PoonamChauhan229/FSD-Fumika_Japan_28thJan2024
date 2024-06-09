@@ -91,7 +91,7 @@ import img2 from '../assets/imga1.avif'
       {/* {console.log(imageArray)} */}
       {
         imageArray.map((element)=>(
-          <Design imgsrc={element.imgsrc} imgName={element.id} name={name}/>
+          <Design imgsrc={element.imgsrc} imgName={element.id} name={name} rating={7}/>
         ))
       }
     </div>

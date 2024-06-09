@@ -1,4 +1,9 @@
-const Design = ({imgsrc,imgName,name}) => {//over the fly
+const Design = ({imgsrc,imgName,name,rating}) => {//over the fly
+  let ratingStyle={
+    // color:"red"
+    //ternary opertor //conditional styling 
+    color:rating==7?"red":"green"
+  }
 
 // const Design = (props) => {
     //console.log(props)// object
@@ -13,6 +18,7 @@ const Design = ({imgsrc,imgName,name}) => {//over the fly
     ]
   return (
     <div>
+      <div style={ratingStyle}>{rating}</div>
         {/* <div><b style={{fontSize:"25px"}}>Image-{props.imgName}</b></div>
       <img src={props.imgsrc} alt="" height={200} width={317.5}/> */}
 

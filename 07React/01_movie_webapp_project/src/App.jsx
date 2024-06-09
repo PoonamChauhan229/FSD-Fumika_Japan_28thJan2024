@@ -13,12 +13,45 @@ let [age, setAge] = useState(0);
 // stateVaraible=> InitialState/Initialvalue 10
 //setstate() > update 10 -20 -30 >> function
 let [display,setDisplay]=useState("Hello World----")
-let val=90;
+const[show,setShow]=useState(false)
+const[castShow,setCastShow]=useState(false)
+// click > show value should be updated?
 
+let val=90;
+const myToggleStyle={
+  backgroundColor:"navy",
+  color:"white",
+  padding:"10px",
+  width:"300px",
+  display:show==true?"block":"none"
+
+}
+const myCastStyle={
+  backgroundColor:"navy",
+  color:"white",
+  padding:"10px",
+  width:"300px",
+  display:castShow==true?"block":"none"
+
+}
   return (
     <>
+    <button onClick={()=>{
+      setShow(!show)
+      setCastShow(false)
+      }}>Toggle Summary</button>
+
+        <button onClick={()=>{
+      setCastShow(!castShow)
+      setShow(false)
+      }}>Toggle Cast</button>
+    <p style={myToggleStyle}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae saepe sapiente, accusantium, repellendus aperiam cupiditate velit facere deleniti asperiores quisquam quae? Dicta accusamus ipsam laboriosam velit repellat quidem modi veritatis.</p>
+
+    <p style={myCastStyle}>Fumika Poonam both doing React</p>
+    {      console.log(`Show value is`,show)
+    }
     {/* any pices of Js > {} */}
-    <h2>React-{age}</h2>
+    {/* <h2>React-{age}</h2>
     <h2>JS-{val}</h2>
     <button onClick={()=>val++}>Click Val</button>
     <button onClick={()=>{
@@ -34,7 +67,9 @@ let val=90;
       <img src={img1} alt="abc" />
       {console.log("Fumika")}
       <img src={imga1} alt="" />
-      <ImageDisplay name={"Fumika100"}/>
+      <ImageDisplay name={"Fumika100"}/> */}
+
+      
       
     </>
   ) 
