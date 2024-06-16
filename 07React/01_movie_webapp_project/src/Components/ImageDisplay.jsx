@@ -15,35 +15,43 @@ import img2 from '../assets/imga1.avif'
     const imageArray=[
       {
         id:1,
-        imgsrc:img1
+        imgsrc:img1,
+        movieName:"hit-man"
       },
       {
         id:2,
-        imgsrc:img2
+        imgsrc:img2,
+        movieName:"iron-man"
       },
       {
         id:3,
-        imgsrc:img1
+        imgsrc:img1,
+        movieName:"spider-man"
       },
       {
         id:4,
-        imgsrc:img2
+        imgsrc:img2,
+        movieName:"shakti-man"
       },
       {
         id:5,
-        imgsrc:img1
+        imgsrc:img1,
+        movieName:"super-man"
       },
       {
         id:6,
-        imgsrc:img2
+        imgsrc:img2,
+        movieName:"supaer-man"
       },
       {
         id:7,
-        imgsrc:img1
+        imgsrc:img1,
+        movieName:"1971"
       },
       {
         id:8,
-        imgsrc:img2
+        imgsrc:img2,
+        movieName:"mercury"
       },
       {
         id:9,
@@ -90,8 +98,8 @@ import img2 from '../assets/imga1.avif'
 
       {/* {console.log(imageArray)} */}
       {
-        imageArray.map((element)=>(
-          <Design imgsrc={element.imgsrc} imgName={element.id} name={name} rating={7}/>
+        imageArray.map((element,index)=>(
+          <Design imgsrc={element.imgsrc} imgName={element.id} name={name} rating={7} key={element.id} movieName={element.movieName}/>
         ))
       }
     </div>

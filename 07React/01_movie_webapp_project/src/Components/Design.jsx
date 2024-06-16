@@ -1,4 +1,6 @@
-const Design = ({imgsrc,imgName,name,rating}) => {//over the fly
+import { Link } from "react-router-dom"
+
+const Design = ({imgsrc,imgName,name,rating,movieName}) => {//over the fly
   let ratingStyle={
     // color:"red"
     //ternary opertor //conditional styling 
@@ -24,8 +26,10 @@ const Design = ({imgsrc,imgName,name,rating}) => {//over the fly
 
       <div><b style={{fontSize:"25px"}}>Image-{imgName}-{name}</b></div>
       <img src={imgsrc} alt="" height={200} width={317.5}/>
+      <br/>
+     <Link to={`/in/movie/${movieName}`}> <button>Click Me Watch Info</button></Link>
 
-      {
+      {/* {
         //fetch rescountries       
         console.log(arr)
       }
@@ -34,7 +38,7 @@ const Design = ({imgsrc,imgName,name,rating}) => {//over the fly
         arr.map((element)=>(
           console.log(element.name)
         ))
-      }
+      } */}
     </div>
   )
 }
