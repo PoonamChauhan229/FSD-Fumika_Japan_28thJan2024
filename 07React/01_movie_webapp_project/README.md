@@ -105,3 +105,20 @@ const students = [
       summary:"Peter Jackson's expansive remake of the 1933 classic follows director Carl Denham (Jack Black) and his crew on a journey from New York City to the ominous Skull Island to film a new movie. Accompanying him are playwright Jack Driscoll (Adrien Brody) and actress Ann Darrow (Naomi Watts), who is whisked away by the monstrous ape, Kong, after they reach the island. The crew encounters dinosaurs and other creatures as they race to rescue Ann, while the actress forms a bond with her simian captor."
     },
   ]
+
+
+  CRUD
+  CREATE      >FB(CREATE POST/ADD POST)          >POST       >>ADDING SOMETHING TO THE DB/SERVER
+  READ        >FB(VIWING THE CONTENT/WALL)       >GET        >>RETRIVING THE DATA
+  UPDATE      >FB(Edit OPtion)                   >PUT        >>UPDATING THE DATA
+  DELETE      >FB(DElete Option)                 >DELETE     >>DELETING THE DATA
+
+  HTTP METHODS: axios/fetch >> 
+  GET
+  POST
+  PUT
+  DELETE
+
+  WHAT METHODS?
+  GET METHOD  >> RETRIVING/FETCHING THE DATA FROM THE MOCKAPI URL(CONSOLE) AND DIPLAY TO THE UI >> USEEFFECT
+  POST METHOD >> 

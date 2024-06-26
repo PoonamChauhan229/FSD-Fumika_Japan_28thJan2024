@@ -15,6 +15,8 @@ const Navbar = () => {
          <div><Link to='/about'>About Us</Link></div>
         <div ><Link to='/services' className='text-warning'>Services</Link></div>
         <div><Link to='/contact' className='text-warning'>Contact Us</Link></div>
+        <div><Link to='/reactbootstrap' className='text-warning'>React Bootstrap</Link></div>
+        <div><Link to='/addmovie' className='text-success'>Add Movie</Link></div> 
     </div>
   </div>
   </>

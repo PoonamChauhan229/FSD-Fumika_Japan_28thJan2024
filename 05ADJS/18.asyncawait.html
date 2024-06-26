@@ -16,13 +16,41 @@
     }
     functioname()
     <script>
-        async function test(){
+        //normal function
+        // async function test(){
+        //     let res=await fetch('https://restcountries.com/v3.1/all')//250 
+        //     // string responnse
+        //     let data=await res.json()//250 
+        //     console.log(data)
+        // }
+        // test()
+        // //arrow function
+        // const test1async =async()=>{
+        //     let res=await fetch('https://restcountries.com/v3.1/all')//250 
+        //     // string responnse
+        //     let data=await res.json()//250 
+        //     console.log(data)
+        // }
+        // test1async()
+        console.log(1)// Print
+        console.log(2)//Print
+        console.log(3)// Print
+        function testSum(){
+            console.log(20+50)//70
+        }
+        testSum()// Funtion + calculation + print  little more 0.01 sec
+         const test1async =async()=>{
             let res=await fetch('https://restcountries.com/v3.1/all')//250 
             // string responnse
             let data=await res.json()//250 
             console.log(data)
         }
-        test()
+        test1async()
+        
+        console.log(4)//Print
+        console.log(5)//Print
+        console.log(5)//Print
+
     </script>
 </body>
 </html>

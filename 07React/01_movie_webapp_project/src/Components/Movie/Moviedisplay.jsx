@@ -1,12 +1,12 @@
 import React from 'react'
 import Movie from './Movie'
 
-const Moviedisplay = ({movie}) => {
+const Moviedisplay = ({movieData}) => {
   return (
-    <div className='d-flex gap-2 flex-wrap'>
-   
+    <div className='d-flex gap-3 flex-wrap container ms-5'>
+   {/* each movie card */}
     {
-        movie.map((element,index)=><Movie {...element} id={index} key={index}/>)
+        movieData?.map((element,index)=><Movie {...element} key={index} id={index}/>)
     }
     </div>
   )
