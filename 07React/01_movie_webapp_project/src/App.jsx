@@ -16,6 +16,9 @@ import MovieInfo from './Components/Movie/MovieInfo'
 import Moviedisplay from './Components/Movie/Moviedisplay'
 import MovieSection from './Components/Movie/MovieSection'
 import AddMovie from './Components/Movie/AddMovie'
+import EditMovie from './Components/Movie/EditMovie'
+import PropDrilling from './Components/PropDrilling/PropDrilling'
+import Context from './Components/useContext/Context'
 
 function App(){
 //useState > Hook > Functions
@@ -155,10 +158,14 @@ const [movieData,setMovieData] = useState([])
         <Route path='/about' element={<AboutUs/>}/>
         <Route path='/services' element={<Display/>}/>
         <Route path='/contact' element={<ContactUs/>}/>
-        <Route path='/movie' element={<Moviedisplay movieData={movieData}/>}/>  
+        <Route path='/movie' element={<Moviedisplay movieData={movieData} setMovieData={setMovieData}/>}/>  
         <Route path='/movie/in/:id' element={<MovieInfo movie={movie}/>}/>         
         <Route path='/reactbootstrap' element={<MovieSection/>}/>
-        <Route path='/addmovie' element={<AddMovie/>}/>
+        <Route path='/addmovie' element={<AddMovie setMovieData={setMovieData}/>}/>
+        <Route path='/editmovie/:id' element={<EditMovie/>}/>
+        <Route path='/propdrilling' element={<PropDrilling/>}/>
+        <Route path='/context' element={<Context/>}/>
+ 
     </Routes>
 
     </div>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
-const AddMovie = () => {
+const AddMovie = ({setMovieData}) => {
+  const navigate=useNavigate()
   const [movieName,setMovieName]=useState("");
   const [moviePoster,setMoviePoster]=useState("");
   const [movieRating,setMovieRating]=useState("");
@@ -25,6 +27,15 @@ const AddMovie = () => {
     })
     let data = await res.json()
     console.log(data)
+    getMovieData()
+  }
+
+  const getMovieData = async()=>{
+    console.log("Movie data is called...")
+    let res = await fetch ('https://66760b38a8d2b4d072f2415f.mockapi.io/movie')
+    let data = await res.json()
+    console.log(data)
+    setMovieData(data)
   }
   return (
     <div className='mx-auto  w-75 text-center'>
@@ -40,7 +51,8 @@ const AddMovie = () => {
 
 
 
-      <button className='btn btn-primary' onClick={()=>{postMovies()}}>ADD MOVIE</button>
+      <button className='btn btn-primary mx-2' onClick={()=>{postMovies()}}>ADD MOVIE</button>
+      <button className='btn btn-primary mx-2' onClick={()=>{navigate('/movie')}}>Back🔙</button>
     </div>
   )
 }
