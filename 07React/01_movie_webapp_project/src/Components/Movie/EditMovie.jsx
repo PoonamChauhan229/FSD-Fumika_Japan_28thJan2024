@@ -16,13 +16,15 @@ const EditMovie = () => {
   }
   console.log(singleMovie)
 
-  useEffect(()=>getMovieData(),[])// when ur page is loaded 
+  useEffect(()=>{
+    getMovieData()
+  },[id])// when ur page is loaded 
 
   return (
    <>
    {
     singleMovie?
-    <EditMovieForm singleMovie={singleMovie} id={id}/>// LOAD WHEN API IS COMPLETED 
+    <EditMovieForm singleMovie={singleMovie} id={id}     getMovieData={getMovieData()}/>// LOAD WHEN API IS COMPLETED 
     :
     <p>Loading.....</p> // WHEN API CALL IS RUNNING
    }
@@ -33,7 +35,7 @@ const EditMovie = () => {
 export default EditMovie
 
 
-const EditMovieForm=({singleMovie,id})=>{ 
+const EditMovieForm=({singleMovie,id,getMovieData})=>{ 
 
   const navigate=useNavigate()
   const [movieName,setMovieName]=useState(singleMovie.moviename);
@@ -63,7 +65,8 @@ const EditMovieForm=({singleMovie,id})=>{
     })
     let data = await res.json()
     console.log(data)
-    
+    getMovieData()
+
   }
   return(
     <>
@@ -81,6 +84,7 @@ const EditMovieForm=({singleMovie,id})=>{
 
 
       <button className='btn btn-primary mx-2' onClick={()=>{updateMovies()}}>UPDATE & SAVE</button>
+      <button className='btn btn-primary mx-2' onClick={()=>{navigate('/movie')}}>back</button>
     </div>
     
     </>

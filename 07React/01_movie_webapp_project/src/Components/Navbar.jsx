@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import cartContext from '../utils/cartContext'
 
 const Navbar = () => {
+  const cartNavbar=useContext(cartContext)
+  console.log(cartNavbar)
+  console.log(useContext(cartContext))
   return (
   <>
   <div className='d-flex justify-content-between bg-dark text-white p-2'>
@@ -19,6 +23,7 @@ const Navbar = () => {
         <div><Link to='/addmovie' className='text-success'>Add Movie</Link></div> 
         <div><Link to='/propdrilling' className='text-info'>PropDrilling</Link></div> 
         <div><Link to='/context' className='text-success'>UseContext</Link></div> 
+        <div><Link  className='text-warning'>🛒{cartNavbar}</Link></div> 
     </div>
   </div>
   </>

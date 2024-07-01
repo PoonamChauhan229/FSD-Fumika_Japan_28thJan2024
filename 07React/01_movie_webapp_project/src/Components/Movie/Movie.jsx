@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import cartContext from '../../utils/cartContext'
 Link
 const Movie = ({movieposter,moviename,summary,rating,id,setMovieData}) => {
+    const [cartUCtxt,setCartUCtxt]=useContext(cartContext)
     const[show,setShow]=useState(false)
 const[castShow,setCastShow]=useState(false)
 
@@ -40,27 +42,28 @@ const getMovieData = async()=>{
         <h6>{rating}</h6>
         </div>
         <div className='d-flex'>
-            <span onClick={()=>{
+        <button className='btn p-0 m-0'  onClick={()=>{
             setShow(!show)
             setCastShow(false)
-            }}>{show?<b>🔽</b>:<b>🔼</b>}</span>
+            }}>{show?<b>🔽</b>:<b>🔼</b>}</button>
        
 
-            <span className='mx-2' onClick={()=>{
+       <button className='btn p-0 m-0 mx-2' onClick={()=>{
             setCastShow(!castShow)// summsry state
             setShow(false)//caste caste
-            }}>{castShow?<b>💥</b>:<b>💫</b>}</span>
+            }}>{castShow?<b>💥</b>:<b>💫</b>}</button>
             
             {/* MOvie Info Button  */}
         {/* <Link to ={`/movie/in/${id}`}> <span className='mx-2'><b>ℹ</b></span></Link> */}
 
         {/* button tag */}
-        <span onClick={()=>{
+        <button className='btn p-0 m-0'  onClick={()=>{
             navigate(`/movie/in/${id}`)
-        }}>🟣</span>  
+        }}>🟣</button>  
           {/* edit Button */}
-        <span onClick={()=>navigate(`/editmovie/${id}`)}>✏</span>
-        <span onClick={()=>deleteMovie()}>🚮</span>
+          <button className='btn p-0 m-0'  onClick={()=>navigate(`/editmovie/${id}`)}>✏</button>
+        <button className='btn p-0 m-0'  onClick={()=>deleteMovie()}>🚮</button>
+        <button className='btn p-0 m-0' onClick={()=>setCartUCtxt(cartUCtxt+1)}>🛒</button>
         </div>
        {show && <p>{summary}</p>}
        {castShow && <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quia a nostrum quis delectus harum, perferendis dicta minima beatae ipsum?</p>}
