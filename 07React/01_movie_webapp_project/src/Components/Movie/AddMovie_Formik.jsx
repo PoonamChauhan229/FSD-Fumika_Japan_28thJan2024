@@ -1,25 +1,42 @@
 import React from 'react'
-import {useNavigate} from "react-router-dom"
 import { useFormik } from 'formik'
+import { useNavigate } from 'react-router-dom'
+import * as Yup from "yup";
 
+function AddMovie_Formik({setMovieData}){
+    const navigate=useNavigate()
+    const formSchema=Yup.object().shape({
+            moviename:Yup.string().min(5,"Too Short"),
+            movieposter:Yup.string().min(5,"Too Short").max(20,"Movie Name too long").required(),
+            rating:Yup.number().required().positive(),
+            summary:Yup.string().min(5,"Too Short").max(250,"Summary too long"),
+            cast:Yup.string().required(),
+            trailer:Yup.string().required(),
+            publishYear:Yup.string().required(),
+            likeNum:Yup.number().required(),
+            disLikeNum:Yup.number().required(),
+            genres:Yup.string().required(),
+            category:Yup.string().required(),
 
-function AddMovie_Formik(){
+    })
     const formik=useFormik({
         initialValues:{
             moviename:"",
             movieposter:"",
-            movierating:"",
-            moviesummary:"",
-            moviecast:"",
-            movietrailer:"",
+            rating:"",
+            summary:"",
+            cast:"",
+            trailer:"",
             publishYear:"",
-            movieLikeNum:"",
-            movieDisLikeNum:"",
-            movieGenres:"",
-            movieCategory:"",
+            likeNum:"",
+            disLikeNum:"",
+            genres:"",
+            category:"",
         },
+        validationSchema:formSchema,
         onSubmit:(values)=>{
-            console.log(values)
+            console.log(values) 
+            postMovies(values)
         }   
     })
 console.log(formik)
@@ -27,6 +44,31 @@ console.log(formik)
     //handleChange
     //values > (movieName:"",moviePoster:""...)
     
+    const postMovies=async(newMovie)=>{
+        console.log("Movie Posted to the DB..")
+
+        console.log("NEW MOVIE:",newMovie)
+        let res = await fetch(`https://66760c9da8d2b4d072f24534.mockapi.io/movie/movie`,{
+            method:'POST',
+            headers:{'content-type':'application/json'}, 
+            //send your data in the request body as JSON
+            body:JSON.stringify(newMovie)
+            //passing a object and sending to the server > string format
+        })
+        let data = await res.json()
+        console.log(data)
+        getMovieData()
+    }
+
+    //updating a data to browser
+    const getMovieData=async()=>{
+        console.log("Movie data is called....")
+        let res = await fetch('https://66760c9da8d2b4d072f24534.mockapi.io/movie/movie')//API call to get all movie data
+        let data = await res.json()//responding in string, conver to json format
+        console.log(data)
+        setMovieData(data)
+    }
+
     return(
         <>
     <div>
@@ -34,42 +76,51 @@ console.log(formik)
         <form onSubmit={formik.handleSubmit}>
             {/* MOVIE NAME */}
             <input type="text" name="moviename" id="moviename" placeholder='Movie Name' onChange={formik.handleChange} value={formik.values.moviename}/> <br />
+            {formik.errors.moviename && formik.touched.moviename ? (
+             <div>{formik.errors.moviename}</div>
+           ) : null}
 
             {/* MOVIE POSTER */}
             <input type="text" name="movieposter" id="movieposter" placeholder="Movie Poster" onChange={formik.handleChange} value={formik.values.movieposter} /> <br />
+            {formik.errors.movieposter && formik.touched.movieposter ? (
+             <div style={{color:"red"}}>{formik.errors.movieposter}</div>
+           ) : null}
 
             {/* MOVIE RATING */}
-            <input type="text" name="movierating" id="movierating" placeholder='Rating' onChange={formik.handleChange} value={formik.values.movierating} /> <br />
+            <input type="text" name="rating" id="rating" placeholder='Rating' onChange={formik.handleChange} value={formik.values.rating} /> <br />
+            {formik.errors.rating && formik.touched.rating ? (
+             <div>{formik.errors.rating}</div>
+           ) : null}
 
             {/* MOVIE SUMMARY */}
-            <input type="text" name="moviesummary" id="moviesummary" placeholder='Summary' onChange={formik.handleChange} value={formik.values.moviesummary}/> <br />
+            <input type="text" name="summary" id="summary" placeholder='Summary' onChange={formik.handleChange} value={formik.values.summary}/> <br />
 
             {/* MOVIE CAST */}
-            <input type="text" name="moviecast" id="moviecast" placeholder='Cast' onChange={formik.handleChange} value={formik.values.moviecast}/> <br />
+            <input type="text" name="cast" id="cast" placeholder='Cast' onChange={formik.handleChange} value={formik.values.cast}/> <br />
 
             {/* Trailer */}
-            <input type="text" name="movietrailer" id="movietrailer" placeholder='Trailer' onChange={formik.handleChange} value={formik.values.movietrailer} /> <br />
+            <input type="text" name="trailer" id="trailer" placeholder='Trailer' onChange={formik.handleChange} value={formik.values.trailer} /> <br />
 
             {/* PUBLISH YEAR */}
             <input type="text" name="publishYear" id="publishYear" placeholder='Publish Year' onChange={formik.handleChange} value={formik.values.publishYear}/> <br />
 
             {/* LIKE NUM */}
-            <input type="text" name="movieLikeNum" id="movieLikeNum" placeholder='Like Number' onChange={formik.handleChange} value={formik.values.movieLikeNum} /> <br />
+            <input type="text" name="likeNum" id="likeNum" placeholder='Like Number' onChange={formik.handleChange} value={formik.values.likeNum} /> <br />
 
             {/* DISLIKE NUM */}
-            <input type="text" name="movieDisLikeNum" id="movieDisLikeNum" placeholder='Dislike Number' onChange={formik.handleChange} value={formik.values.movieDisLikeNum} /> <br />
+            <input type="text" name="disLikeNum" id="disLikeNum" placeholder='Dislike Number' onChange={formik.handleChange} value={formik.values.disLikeNum} /> <br />
 
             {/* GENRES */}
-            <input type="text" name='movieGenres' id="movieGenres" placeholder='Genres' onChange={formik.handleChange} value={formik.values.movieGenres} /> <br />
+            <input type="text" name='genres' id="genres" placeholder='Genres' onChange={formik.handleChange} value={formik.values.genres} /> <br />
 
             {/* Category */}
-            <input type="text" name="movieCategory" id="movieCategory" placeholder='Category' onChange={formik.handleChange} value={formik.values.movieCategory} /> <br />
+            <input type="text" name="category" id="category" placeholder='Category' onChange={formik.handleChange} value={formik.values.category} /> <br />
 
             {/* ADD MOVIE */}
             <button type="submit">ADD MOVIE</button>
 
             {/* Back */}
-            <button type="submit">BACK</button>
+            <button type="submit" className='btn btn-warning mx-3' onClick={()=>{navigate('/allmovies')}}>BACK</button>
             
         </form>
     </div>

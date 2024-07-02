@@ -53,7 +53,7 @@ const [cartUCtxt,setCartUCtxt] =useState(0)
     // <div style={{backgroundColor:"black",height:"100vh"}}>
     <cartContext.Provider value={[cartUCtxt,setCartUCtxt]}>
       <Adduser_Formik/>
-      <AddMovie_Formik/>
+      <AddMovie_Formik setMovieData={setMovieData}/>
     <div>
     <Navbar/>
     
