@@ -6,7 +6,7 @@ const Moviedisplay = ({movieData,setMovieData}) => {
     <div className='d-flex gap-3 flex-wrap container ms-5'>
    {/* each movie card */}
     {
-        movieData?.map((element,index)=><Movie {...element} key={index}setMovieData={setMovieData}/>)
+        movieData?.map((element,index)=><Movie {...element} key={index}setMovieData={setMovieData} element={element}/>)
     }
     </div>
   )

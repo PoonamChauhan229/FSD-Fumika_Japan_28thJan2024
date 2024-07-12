@@ -1,4 +1,4 @@
-
+import { Provider } from 'react-redux'
 import { useEffect, useState } from 'react'
 import './App.css'
 import ImageDisplay from './Components/ImageDisplay'
@@ -23,9 +23,15 @@ import {movie} from './utils/constant'
 import cartContext from './utils/cartContext'
 import Adduser_Formik from './Components/Movie/Adduser_Formik'
 import AddMovie_Formik from './Components/Movie/AddMovie_Formik'
+import store from './utils/store'
+import CartPage from './Components/Movie/CartPage'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
 
 function App(){
+  //dark
+
 //useState > Hook > Functions
 let [age, setAge] = useState(0);
 // const [stateVaraible,setStateVariable]=useState()
@@ -49,38 +55,43 @@ const [cartUCtxt,setCartUCtxt] =useState(0)
   useEffect(()=>{
     getMovieData()
   },[])
+
+  const [mode,setMode]=useState("dark")
+  const theme = createTheme({
+  palette: {
+    mode: mode,
+  },
+});
   return (
-    // <div style={{backgroundColor:"black",height:"100vh"}}>
-    <cartContext.Provider value={[cartUCtxt,setCartUCtxt]}>
-      <Adduser_Formik/>
-      <AddMovie_Formik setMovieData={setMovieData}/>
-    <div>
-    <Navbar/>
-    
-    {/* <Sample/>   {/* Home Page */}   
-    {/* <AboutUs_Section/>   {/* About Page */}  
-    {/* <Display/>   {/* Services */}
-    {/* <ContactUs/> */}
+    <>
+     {/* <div style={{backgroundColor:"black",height:"100vh"}}> */}
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+    <Provider store={store}>
+    <cartContext.Provider value={[cartUCtxt,setCartUCtxt]}>     
+      <Navbar mode={mode} setMode={setMode}/>
+      <Routes>
+          <Route path="/" element={<Homepage/>}/> 
+          <Route path='/sample' element={<Sample/>}/>
+          <Route path='/about' element={<AboutUs/>}/>
+          <Route path='/services' element={<Display/>}/>
+          <Route path='/contact' element={<ContactUs/>}/>
+          <Route path='/movie' element={<Moviedisplay movieData={movieData} setMovieData={setMovieData}/>}/>  
+          <Route path='/movie/in/:id' element={<MovieInfo movie={movie}/>}/>         
+          <Route path='/reactbootstrap' element={<MovieSection/>}/>
+          <Route path='/addmovie' element={<AddMovie setMovieData={setMovieData}/>}/>
+          <Route path='/editmovie/:id' element={<EditMovie/>}/>
+          <Route path='/propdrilling' element={<PropDrilling/>}/>
+          <Route path='/context' element={<Context/>}/>
+          <Route path='/adduserFormik' element={<Adduser_Formik/>}/>
+          <Route path='/addmovieFormik' element={<AddMovie_Formik setMovieData={setMovieData}/>}/>
+          <Route path='/cart' element={<CartPage/>}/>
 
-{/* ALways in App.jsx */}
-    <Routes>
-        <Route path="/" element={<Homepage/>}/> 
-        <Route path='/sample' element={<Sample/>}/>
-        <Route path='/about' element={<AboutUs/>}/>
-        <Route path='/services' element={<Display/>}/>
-        <Route path='/contact' element={<ContactUs/>}/>
-        <Route path='/movie' element={<Moviedisplay movieData={movieData} setMovieData={setMovieData}/>}/>  
-        <Route path='/movie/in/:id' element={<MovieInfo movie={movie}/>}/>         
-        <Route path='/reactbootstrap' element={<MovieSection/>}/>
-        <Route path='/addmovie' element={<AddMovie setMovieData={setMovieData}/>}/>
-        <Route path='/editmovie/:id' element={<EditMovie/>}/>
-        <Route path='/propdrilling' element={<PropDrilling/>}/>
-        <Route path='/context' element={<Context/>}/>
- 
-    </Routes>
-
-    </div>
+      </Routes>
     </cartContext.Provider>
+    </Provider>
+    </ThemeProvider>
+    </>
   ) 
 }
 

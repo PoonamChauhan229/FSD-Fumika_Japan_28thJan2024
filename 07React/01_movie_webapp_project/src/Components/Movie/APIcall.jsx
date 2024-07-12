@@ -18,7 +18,7 @@ const APIcall = () => {
     // useEffect(()=>{},[]) Syntax >> Best place to make an API CAll
     // useEffect > async not allowed
     // neat and tidy >> break it and use it 
-
+    //async useEffect(){}
     // 1st way
     // useEffect(()=>{
     //     getCountriesData()

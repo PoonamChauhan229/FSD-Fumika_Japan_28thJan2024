@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import cartContext from '../../utils/cartContext'
-Link
-const Movie = ({movieposter,moviename,summary,rating,id,setMovieData}) => {
+import { useDispatch } from 'react-redux'
+import { addItem } from '../../utils/cartSlice'
+
+const Movie = ({movieposter,moviename,summary,rating,id,setMovieData,element}) => {
     const [cartUCtxt,setCartUCtxt]=useContext(cartContext)
     const[show,setShow]=useState(false)
-const[castShow,setCastShow]=useState(false)
+    const[castShow,setCastShow]=useState(false)
 
 // usNavigate()
 const navigate=useNavigate()
@@ -33,6 +35,14 @@ const getMovieData = async()=>{
     console.log(data)
     setMovieData(data)// movies
   }
+
+  
+    //btn is pressed > dispacth the action> reducer function
+    const dispatch=useDispatch()
+    const handleAdditem=(item)=>{
+        console.log(item)
+        dispatch(addItem(item))
+    }
  
  return (
     <div className="mx-4 rounded" style={{border:"2px solid red",height:"270px",width:"250px"}} >
@@ -45,7 +55,7 @@ const getMovieData = async()=>{
         <button className='btn p-0 m-0'  onClick={()=>{
             setShow(!show)
             setCastShow(false)
-            }}>{show?<b>🔽</b>:<b>🔼</b>}</button>
+            }}>{show===true?<b>🔽</b>:<b>🔼</b>}</button>
        
 
        <button className='btn p-0 m-0 mx-2' onClick={()=>{
@@ -64,6 +74,8 @@ const getMovieData = async()=>{
           <button className='btn p-0 m-0'  onClick={()=>navigate(`/editmovie/${id}`)}>✏</button>
         <button className='btn p-0 m-0'  onClick={()=>deleteMovie()}>🚮</button>
         <button className='btn p-0 m-0' onClick={()=>setCartUCtxt(cartUCtxt+1)}>🛒</button>
+        
+        <button className='btn p-0 m-0' onClick={()=>{handleAdditem(element)}}>Redux</button>
         </div>
        {show && <p>{summary}</p>}
        {castShow && <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quia a nostrum quis delectus harum, perferendis dicta minima beatae ipsum?</p>}

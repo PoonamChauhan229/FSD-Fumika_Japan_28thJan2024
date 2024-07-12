@@ -24,7 +24,7 @@ const EditMovie = () => {
    <>
    {
     singleMovie?
-    <EditMovieForm singleMovie={singleMovie} id={id}     getMovieData={getMovieData()}/>// LOAD WHEN API IS COMPLETED 
+    <EditMovieForm singleMovie={singleMovie} id={id}    getMovieData={getMovieData()}/>// LOAD WHEN API IS COMPLETED 
     :
     <p>Loading.....</p> // WHEN API CALL IS RUNNING
    }
@@ -36,7 +36,7 @@ export default EditMovie
 
 
 const EditMovieForm=({singleMovie,id,getMovieData})=>{ 
-
+// const [singleMovie,setSingleMovie]=useState("")
   const navigate=useNavigate()
   const [movieName,setMovieName]=useState(singleMovie.moviename);
   const [moviePoster,setMoviePoster]=useState(singleMovie.movieposter);

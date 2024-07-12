@@ -1,7 +1,7 @@
 import React from 'react'
 
-import  CIcon  from '@coreui/icons-react';
-import { cilList, cilShieldAlt } from '@coreui/icons'
+// import  CIcon  from '@coreui/icons-react';
+// import { cilList, cilShieldAlt } from '@coreui/icons'
 const ContactUs = () => {
  
   return (

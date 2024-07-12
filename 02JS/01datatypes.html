@@ -157,13 +157,25 @@
             studeentroll:12,
             class:10,
             location:"Tokyo",
-            contactnum:6790642789
+            contactnum:6790642789,
+            userInfo:{
+                name:"Fumika",
+                login:"fumika0302"
+            }
         }
         console.log(obj1)
+        this.state={
+            userInfo:{
+                name:"Fumika",
+                login:"fumika0302"
+            }
+        }
 
         // you create an object car
         // access obj using dot operator
         console.log(obj1.class)
+        console.log(obj1.userInfo.name)
+        console.log(this.state.userInfo.name)
 
         console.log(obj1.studeentroll)
         console.log(obj1.location)

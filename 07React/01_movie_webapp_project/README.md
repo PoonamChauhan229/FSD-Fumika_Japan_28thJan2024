@@ -122,3 +122,62 @@ const students = [
   WHAT METHODS?
   GET METHOD  >> RETRIVING/FETCHING THE DATA FROM THE MOCKAPI URL(CONSOLE) AND DIPLAY TO THE UI >> USEEFFECT
   POST METHOD >> 
+
+  REDUX TOOLKIT
+
+  Whereever a button is pressed
+  An action is dipatched , that action calls up the reducer function and that reducer function is responsible to update the store
+
+  When we want data from redux store
+  We have to subscribe the store, By using useSelector() , we can subscribe the store , fetch the data and update in UI.
+
+
+RTK
+MATRerial UI
+Class component
+Life cycles methods of Class Component >> THEORY 
+TO DO APP in RTK REACT
+
+Step 1:
+Installtions:
+An existing app
+npm install @reduxjs/toolkit
+npm install react-redux
+>> Chek in package.json
+
+Step 2 :
+Create a Redux Store
+> utilis > store.js
+
+import { configureStore } from '@reduxjs/toolkit'
+
+const store=configureStore({
+ // contain the slices
+})
+export default store
+
+Step2:
+Create an Slice 
+> cartSlice.js
+> textSlice.js
+
+import { createSlice } from "@reduxjs/toolkit";
+
+const cartSlice=createSlice({
+    name:"cart",
+    initialState:{
+        items:[] // kept as a empty
+    },
+    reducers:{
+        
+    }
+})
+export default cartSlice
+
+Step3:
+Provide the Slice to the store
+
+Step4:
+Provide the Redux Store to React
+
+textSlice
