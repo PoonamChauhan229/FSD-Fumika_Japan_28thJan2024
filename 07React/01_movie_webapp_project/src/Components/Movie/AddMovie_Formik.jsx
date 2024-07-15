@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useFormik } from 'formik'
 import { useNavigate } from 'react-router-dom'
 import * as Yup from "yup";
 
+
 function AddMovie_Formik({setMovieData}){
+    useEffect(()=>{
+        console.log("Api Call for Adding movie")
+        let timer=setInterval(()=>{
+            console.log("1000")
+        },1000) 
+        //Unmounting Phase
+        return()=>{
+            console.log("Unmounted!!!")
+            clearInterval(timer)
+        }
+      },[])
     const navigate=useNavigate()
     const formSchema=Yup.object().shape({
             moviename:Yup.string().min(5,"Too Short"),

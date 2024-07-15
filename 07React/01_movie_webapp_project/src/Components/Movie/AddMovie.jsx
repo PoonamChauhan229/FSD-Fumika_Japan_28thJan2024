@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 const AddMovie = ({setMovieData}) => {
+ 
   const navigate=useNavigate()
   const [movieName,setMovieName]=useState("");
   const [moviePoster,setMoviePoster]=useState("");
