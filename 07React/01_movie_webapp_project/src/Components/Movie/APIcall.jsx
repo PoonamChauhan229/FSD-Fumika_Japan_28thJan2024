@@ -7,10 +7,10 @@ const APIcall = () => {
     //https://restcountries.com/v3.1/all
 
     const getCountriesData=async()=>{
-        console.log("REst countries Called........")
+       // console.log("REst countries Called........")
         let res=await fetch('https://restcountries.com/v3.1/all')
         let data=await res.json()// 
-        console.log(data)
+       // console.log(data)
         setCountryData(data)// updated the state variable with the res of API >> array of object
 
     }
@@ -44,7 +44,7 @@ const APIcall = () => {
 
       {
         countryData.map((element,index)=>(
-            <div>Area for a {element.name.common} Country is {element.area}</div>
+            <div key={index}>Area for a {element.name.common} Country is {element.area}</div>
         ))
         }
         </div>

@@ -7,12 +7,12 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 
 const Navbar = ({mode,setMode}) => {
   const cartNavbar=useContext(cartContext)
-  console.log(cartNavbar)
-  console.log(useContext(cartContext))
+  //console.log(cartNavbar)
+  //console.log(useContext(cartContext))
 
   // subcribing to the store
   const cartItems=useSelector(store=>store.cart.items)
-  console.log(cartItems.length)
+  //console.log(cartItems.length)
 
   return (
   <>
@@ -34,6 +34,8 @@ const Navbar = ({mode,setMode}) => {
         <div><Link to='/context' className='text-success'>UseContext</Link></div> 
         <div><Link to='/adduserFormik' className='text-info'>Add_User_Formik</Link></div> 
         <div><Link to='/addmovieFormik' className='text-success'>Add_Movie_Formik</Link></div> 
+
+        <div><Link to='/classComponent' className='text-success'>Class Component</Link></div> 
         
         
         <div><Link  className='text-warning'>🛒{cartNavbar}</Link></div> 
@@ -44,7 +46,7 @@ const Navbar = ({mode,setMode}) => {
           // setMode("light")
           //true?"truedata":"falsedata"
           setMode(mode=="light"?"dark":"light")// setMode(light)
-          console.log(mode)
+          //console.log(mode)
         }}
         >
         {mode==="light"?<><DarkModeIcon/>{mode.toUpperCase()}</>:<><LightModeIcon/>{mode.toUpperCase()}</>}

@@ -7,7 +7,7 @@ import Classprofile from './ClassComponent/Classprofile'
 const Homepage = () => {
   return (
     <> 
-       <Classprofile/>   
+       {/* <Classprofile/>    */}
     <Sample/>
     <AboutUs_Section/>
     <Display/>

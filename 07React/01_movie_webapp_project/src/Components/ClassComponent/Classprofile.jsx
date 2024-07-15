@@ -16,8 +16,14 @@ class Classprofile extends React.Component{// extends inheritance
         num:20,
         count2:700
       }
+      console.log("Parent Constructor")
+    }
+    
+    componentDidMount(){
+        console.log("Parent componentDidMount Called")
     }
     render(){
+        console.log("Parent Render")
         return(
             <>
                 <h1>Class Component-{this.state.count} {this.state.num} {this.state.count2}</h1>

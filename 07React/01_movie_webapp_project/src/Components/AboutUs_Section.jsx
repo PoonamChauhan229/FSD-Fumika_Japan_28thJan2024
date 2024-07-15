@@ -43,7 +43,7 @@ function AboutUs_Section() {
         <h1 className="text-center pb-4"> What we do</h1>
         <div className="d-flex justify-content-center gap-4">
             {
-                topDesignData.map((element)=> <AboutUs_TopDesign  imgUrl={element.imgUrl} heading1={element.heading1} heading2={element.heading2} design={element.design} textSummary={element.textSummary}/>)
+                topDesignData.map((element,index)=> <AboutUs_TopDesign  key={index} imgUrl={element.imgUrl} heading1={element.heading1} heading2={element.heading2} design={element.design} textSummary={element.textSummary}/>)
 
                 // Spread Operator
                 // topDesignData.map((element)=><AboutUs_TopDesign {...element}/>)
@@ -55,7 +55,7 @@ function AboutUs_Section() {
         <h4 className="text-center py-4">WE WANT HEAR FROM YOU</h4>
         {
             // bottomDesignData.map(element=><AboutUs_BottomDesign info={element.info}/>)
-            bottomDesignData.map(element=><AboutUs_BottomDesign {...element}/>)
+            bottomDesignData.map((element,index)=><AboutUs_BottomDesign key={index}{...element}/>)
         }
     
       </div>

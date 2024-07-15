@@ -27,6 +27,7 @@ import store from './utils/store'
 import CartPage from './Components/Movie/CartPage'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import Classprofile from './Components/ClassComponent/Classprofile'
 
 
 function App(){
@@ -46,10 +47,10 @@ const [movieData,setMovieData] = useState([])
 const [cartUCtxt,setCartUCtxt] =useState(0)
   
   const getMovieData = async()=>{
-    console.log("Movie data is called...")
+    //console.log("Movie data is called...")
     let res = await fetch ('https://66760b38a8d2b4d072f2415f.mockapi.io/movie')
     let data = await res.json()
-    console.log(data)
+    //console.log(data)
     setMovieData(data)
   }
   useEffect(()=>{
@@ -86,6 +87,7 @@ const [cartUCtxt,setCartUCtxt] =useState(0)
           <Route path='/adduserFormik' element={<Adduser_Formik/>}/>
           <Route path='/addmovieFormik' element={<AddMovie_Formik setMovieData={setMovieData}/>}/>
           <Route path='/cart' element={<CartPage/>}/>
+          <Route path='/classComponent' element={<Classprofile/>}/>
 
       </Routes>
     </cartContext.Provider>
