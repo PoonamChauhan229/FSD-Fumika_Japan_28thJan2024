@@ -1,0 +1,83 @@
+mongodb>bin>
+cmd
+
+mongosh
+>Start the db server
+
+check dbs > Database
+show dbs
+>
+admin
+local 
+config
+>> System database , not for use
+
+Use for our application, we have create our own db wrt applications
+use fumikadb
+use testdb
+use test2db
+
+mongodb doesnt create an empty database
+
+fumikadb
+>user collections
+
+db.createCollection("collectionName")
+db.createCollection("user")
+
+// switch any other db
+use databaseName
+
+// drop database
+use databaseName
+db.dropDatabase()
+
+ex:
+use fumikadb
+db.dropDatabase()
+
+
+// drop any collection from the db
+use databaseName
+db.collectionName.drop()
+
+ex: drop test2 in fumikadb
+use fumikadb
+show collections
+db.test2.drop()
+
+fumikadb
+// users collections
+// name , age 
+
+// insertData
+> insertOne({})
+
+db.collectionName.insertOne({"key1":"value1","key2":"value2"})
+db.users.insertOne({"name":"fumika","age":22})
+
+> insertMany([{},{},{}])
+db.collectionName.insertMany([
+    {"key1":"value1","key2":"value2"},
+    {"key1":"value1","key2":"value2"},
+    {"key1":"value1","key2":"value2"},
+    {"key1":"value1","key2":"value2"},
+    {"key1":"value1","key2":"value2"}
+])
+
+db.users.insertMany([
+    {"name":"Bob","age":25},
+    {"name":"Charlie","age":27},
+    {"name":"Eve","age":30},
+    {"name":"Smith","age":35},
+    {"name":"Sam","age":15}
+])
+
+//check that in db , the data is inserted or num_offset
+// retrive the data
+// find Query()
+db.collectionName.find()
+db.collectionName.find({})
+
+db.users.find()
+db.users.find({})
