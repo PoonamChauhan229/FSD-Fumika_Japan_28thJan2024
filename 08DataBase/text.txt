@@ -1,0 +1,31 @@
+Where you store the data.
+Ecommerce >>Order Placed >> Order Delivered  >> Data is present for us >> Database
+
+RELATIONAL DB
+SQL DATABASE  >>>SQLite, MySQL, Postgres, Oracle and Microsoft SQL SERVER
+TABLES ROW COLS 
+STRUCTURED QUERY LANGUAGE
+
+
+NON RELATIONAL DB >>>>
+NO SQL DATABASE >>> MONGODB
+COLLECTION
+DOCUMENTS
+FIELDS
+BSON DATA
+
+
+SQL DATABASE
+SELECT STATEMENT > FIND|| GET || RETRIVE FROM DB
+
+10 CHOCOLATES >> SELECT WITH RED COLOR WRAPPER  || CONSTRAINT
+WHERE CLAUSE
+
+SELECT * FROM MOVIES 
+WHERE TITLE="TONY" // TONY 
+
+SELECT column, another_column, …
+FROM mytable
+WHERE condition(s)
+ORDER BY column ASC/DESC  // SORTING
+LIMIT num_limit OFFSET num_offset;
