@@ -81,3 +81,33 @@ db.collectionName.find({})
 
 db.users.find()
 db.users.find({})
+
+
+CRUD 
+CREATE > INSERT THE DATA  > insertOne({}) || insertMany([])
+READ   > RETRIVE THE DATA > findOne({})   || find({})
+UPDATE > MODIFY THE DATA  > updateOne({}) || updateMany()
+DELETE > DELETE THE DATA  > detleteOne({})
+
+db.collectionName.findOne({WHERE CLAUSE})
+db.users.findOne({"name":"Bob"})
+
+updateOne
+db.collectionName.updateOne({WHERE CLAUSE},{update the values using $set})
+db.collectionName.updateOne({WHERE CLAUSE},{update the values using $set:{}})
+
+db.users.updateOne({"name":"Bob"},{$set:{"name:"Fumika"}})
+
+db.users.insertMany([
+    {"name":"Kri","age":25},
+    {"name":"Sri","age":25},
+    {"name":"Odd","age":25}
+])
+
+db.users.updateOne({"age":25},{$set:{"age":35}}) // first come first serve
+updateMany
+db.users.updateMany({"age":25},{$set:{"age":35}}) // All of them will get updated
+
+db.collectionName.deleteOne({WHERE clause })
+db.users.deleteOne({"age":35}) // first come first serve
+db.users.deleteMany({"age":35})  // All of them will get deleted
