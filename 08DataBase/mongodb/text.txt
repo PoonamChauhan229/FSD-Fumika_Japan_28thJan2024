@@ -111,3 +111,56 @@ db.users.updateMany({"age":25},{$set:{"age":35}}) // All of them will get update
 db.collectionName.deleteOne({WHERE clause })
 db.users.deleteOne({"age":35}) // first come first serve
 db.users.deleteMany({"age":35})  // All of them will get deleted
+
+
+CRUD
+logical
+comparision
+aggregate
+
+projection:
+0-exclusion only _id 
+1-inclusion  only inclusion is to all feils
+
+
+
+aggregate> pipeline 
+staging >>> 
+=====
+$match
+$project
+$group
+
+users collection >> total age >> 20+23+45....
+group >> _id:
+        rest calculations 
+
+db.users.aggregate([
+{
+    $group:{
+        _id:null,
+        totalAge:{$sum:"$age"}
+    }
+}
+])
+
+
+total users 
+db.users.aggregate([
+{
+    $group:{
+        _id:null,
+        totalUsers:{$sum:1}
+    }
+}
+])
+        
+db.products.aggregate([
+{
+    $group:{
+        _id:"totalProducts",
+        totalProducts:{$sum:1}
+    }
+}
+])
+db.sales.find()
