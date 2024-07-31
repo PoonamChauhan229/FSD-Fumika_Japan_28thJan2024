@@ -1,0 +1,15 @@
+HTTP METHODS:
+GET
+POST
+PUT
+DELETE
+
+Initiliaze the project
+npm init -y
+npm i nodemon
+
+
+update in scripts
+"start":"node index.js"  >> npm run start
+"dev":"nodemon index.js" >> npm run dev
+

@@ -1,0 +1,6 @@
+console.log(1)
+console.log(1)
+console.log(1)
+console.log(100)
+console.log("fumika")
+console.log("fghjkl;kjhgfdghjkl;kjhgfdghjkl")
