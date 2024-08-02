@@ -7,6 +7,7 @@
 </head>
 <body>
     <script>
+        
         // https://openweathermap.org/current
        let apiKey='68efa0885519a6f01d76917c463ada68'
     //    https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
@@ -18,6 +19,13 @@
             console.log(data)
         }
         test()
+
+ 
+        async function test2() {
+         let res=await fetch('https://localhost:8000/help')   
+        console.log(res)
+        }
+        test2()
 
     </script>
 </body>
