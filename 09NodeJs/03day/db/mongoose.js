@@ -28,8 +28,15 @@ const connection=async()=>{
 }
 connection()
 
-// mongodb with node
-
 // express with node
 
+// mongodb with node
+
+
 // mongodb express with node
+
+// import mongoose                 >require('mongoose')
+// connect to db                   >connect()
+// create collection + schema      >model()
+// create the data                 >new ModelName({})                                  
+// save/insert the data to db      >save()

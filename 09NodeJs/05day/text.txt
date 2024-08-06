@@ -1,0 +1,61 @@
+mongoose :
+npm i mongoose
+
+node with express
+
+node with mongodb
+
+node with express mongodb
+
+
+mongodb connection >> connect to db
+creation model     >> create the collection
+insert and save    >> saving date to collection
+
+all these we did it one file
+
+db     > connection
+model  > only ur models
+
+____________________________________________________________________________________________________________
+Create an project
+
+create a Project folder
+
+Inside the folder > Inside the Terminal
+
+Installations
+npm init -y
+npm i nodemon
+npm i express
+npm i mongoose
+update the scripts in package.json
+
+Folder Setup 
+db
+model
+node_modules  >> Auto Generated
+
+File Creation in MainFolder/ProjectFolder
+index.js      >> imports (require()) + Server Start Message
+.gitignore    >> node_modules
+
+File Setup inside the folders
+db      >>> connection.js                                    || MongodbConnection           >> exports
+model   >>> All the Models Files  >> ModelName_Model.js      || mongoose Collection+ Schema >> exports 
+
+____________________________________________________________________________________________________________
+index.js  is ur mainfolder
+
+
+
+
+
+
+
+
+
+
+
+
+
