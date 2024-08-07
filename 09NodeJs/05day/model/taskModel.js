@@ -5,7 +5,7 @@ const taskSchema=new mongoose.Schema({
     description:{type:String,required:false,lowercase:true},
     duration:{type:Number,required:true,default:"5hr"},
     location:{type:String,required:true,default:"unknown"},
-    date:{type:Number},
+    date:{type:String},
     completed:{type:Boolean,required:true}
 })
 
