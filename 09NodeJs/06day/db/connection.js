@@ -1,10 +1,10 @@
 const mongoose=require('mongoose')
-// local_mogo_url=mongodb://127.0.0.1:27017/fumika01_mongoose
-// cloud_mongo_url=mongodb+srv://poonam:poonam@cluster0.lukkhw2.mongodb.net/fumika01_mongoose
 
 const connection=async()=>{
-   await mongoose.connect("mongodb://127.0.0.1:27017/fumika01_mongoose")
-   // await mongoose.connect("mongodb+srv://poonam:poonam@cluster0.lukkhw2.mongodb.net/fumika01_mongoose")
+  // console.log(process.env.MONGO_URL)
+   await mongoose.connect(process.env.MONGO_URL)   
+
+
    console.log("We are connected to Mongodb")
 
 }

@@ -7,7 +7,8 @@ const userSchema=new mongoose.Schema({
     age:{type:Number,required:true},
     phone_number:{type:Number,required:true},
     email:{type:String,lowercase:true},
-    registered:{type:Boolean,default:false,required:true}
+    registered:{type:Boolean,default:false,required:true},
+    password:{type:String,required:true}
 })
 
 const User=mongoose.model("User",userSchema)

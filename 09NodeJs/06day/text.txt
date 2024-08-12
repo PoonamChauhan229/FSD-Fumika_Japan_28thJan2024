@@ -66,6 +66,22 @@ Mongodb DB cloud
 Mongodb Atlas :
 
 
+____________________________________________________________________________________________________________
+Securing our stuffs
+data security of developers/companies:
+>>
+
+.env
+
+
+
+
+
+
+
+
+
+
 
 
 
