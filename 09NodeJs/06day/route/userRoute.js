@@ -6,22 +6,35 @@ const bycrypt=require('bcryptjs')
 //POST  >> SIGNUP  +  SIGNIN 
 //A account already exists with this email address. Pls Sign in using it.
 // /adduser  >> /signup
-router.post('/adduser',async(req,res)=>{
-    //req> request
-    // ? req.query
-    // req.body
+router.post('/adduser',async(req,res)=>{  
     // any user email exists then, i shouldnt be able to create the user
     try{
+    // check for an duplicate email address
+    let user=await User.findOne({email:req.body.email})
+    console.log(user)
+    if(user){
+        console.log("User is found",req.body.email)
+        return res.send("User already exists")
+    }
+    // password hashing
     const salt=await bycrypt.genSalt(10)
     const hashedPassword=await bycrypt.hash(req.body.password,salt)
 
-    const userData= new User({
-        name: req.body.name,
-        age: req.body.age,
-        phone_number: req.body.phone_number,
-        email: req.body.email,
-        registered: req.body.registered,
-        password: hashedPassword
+    // adding a new user +
+    //const userData=new User(req.body) // >> Password hashed 
+
+    // const userData= new User({
+    //     name: req.body.name,
+    //     age: req.body.age,
+    //     phone_number: req.body.phone_number,
+    //     email: req.body.email,
+    //     registered: req.body.registered,
+    //     password: hashedPassword
+    // })
+        
+    const userData=new User({
+        ...req.body,// making the copy of req.body 
+        password: hashedPassword  // this one i need to update
     })
     userData.save()
     res.send(userData)
