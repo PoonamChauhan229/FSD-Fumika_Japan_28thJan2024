@@ -1,7 +1,7 @@
 const User=require('../model/userModel')
 const express=require('express')
 const router=express.Router() 
-const bycrypt=require('bcryptjs')
+const bcrypt=require('bcryptjs')
 
 //POST  >> SIGNUP  +  SIGNIN 
 //A account already exists with this email address. Pls Sign in using it.
@@ -46,6 +46,32 @@ router.post('/adduser',async(req,res)=>{
 })
 
 // /signin route
+router.post('/signin',async(req,res)=>{
+    try{
+    let user = await User.findOne({
+    $and:[
+        {email:req.body.email},
+        {phone_number:req.body.phone_number}
+    ]                
+    })
+    // console.log("NewUser",user)
+    const isMatch = await bcrypt.compare(req.body.password,user.password) //req.body.password >> When a user type, user.password >>> data from DB
+    // console.log(isMatch)
+    if(isMatch && user){
+        // Generate a token
+        const token = await user.generateAuthToken()
+        // console.log(token)
+         res.send({
+            user:user,
+            token:token
+        })    
+     }
+    }catch(e){
+        res.send(
+            {message:"Your login credentials are incrrect, kindly check and re-enter"}
+        )
+    }
+})
 
 //GET REQUEST
 router.get('/users',async(req,res)=>{

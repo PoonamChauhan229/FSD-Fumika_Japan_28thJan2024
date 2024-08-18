@@ -22,7 +22,38 @@ console.log(jwt) // object
 // optional parameter >> expiry of that token
 // payload   {email:"fumika@gmail.com"}
 // secret key "fumika"
-const token=jwt.sign({email:"fumika@gmail.com"},"fumika",{expiresIn:"7 days"})
+let secret_key="fumika"
+const token=jwt.sign({email:"fumika@gmail.com"},secret_key,{expiresIn:"7 days"})
 console.log("Token",token)
 
-//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bWlrYUBnbWFpbC5jb20iLCJpYXQiOjE3MjM4ODY5MTksImV4cCI6MTcyNDQ5MTcxOX0.csRihKgVxn9_CkzauYJXM3vRCE6Hn6hhaA-K2w4iOZA
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bWlrYUBnbWFpbC5jb20iLCJpYXQiOjE3MjM5NzAwMDAsImV4cCI6MTcyNDU3NDgwMH0.i1nK86Z4huogm5tqbM6XFQHKbAObLefXpj9GWMP7Zq8
+
+// verify the token
+// .verify() >> 2 args > token generated , secret_key
+
+const data1=jwt.verify("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bWlrYUBnbWFpbC5jb20iLCJpYXQiOjE3MjM5NzAwMDAsImV4cCI6MTcyNDU3NDgwMH0.i1nK86Z4huogm5tqbM6XFQHKbAObLefXpj9GWMP7Zq8","fumika")
+console.log("data1",data1)
+
+// data { email: 'fumika@gmail.com', iat: 1723970000, exp: 1724574800 }
+// iat :issued at time
+// exp :expiry
+
+const data2=jwt.verify(token,secret_key)
+console.log("data2",data2)
+
+
+// 4-5 functions
+// annoymous function 
+// no name
+// store into a varaible
+
+//ideal function
+function add(){
+    console.log(2+2)
+}
+add()
+
+let sum=async function(){
+    console.log(2+2)
+}
+sum()
