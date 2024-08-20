@@ -8,8 +8,9 @@ const cors=require('cors')
 const dotenv=require('dotenv')
 dotenv.config()
 app.use(cors())
-// Port no
+
 const PORT=process.env.PORT
+
 connection()
 app.use(express.json())// middleware
 
@@ -17,6 +18,18 @@ app.use(express.json())// middleware
 app.get('/',(req,res)=>{
     res.send("Hello Express!!!")
 })
+
+//registerred a middleware
+// 
+// app.use((req,res,next)=>{
+//     console.log(req.method)
+//     res.send(req.method)
+// })
+
+// app.use((req,res,next)=>{
+//     console.log(req.method)
+//     res.send({mesaage:"Site is currently Down!!! REVISIT AFTER SOMETIME"})
+// })
 
 // API URLS
 app.use(taskRoute)

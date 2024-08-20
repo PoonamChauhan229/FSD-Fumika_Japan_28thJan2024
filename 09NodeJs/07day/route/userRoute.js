@@ -1,0 +1,115 @@
+const User=require('../model/userModel')
+const express=require('express')
+const router=express.Router() 
+const bcrypt=require('bcryptjs')
+const auth=require('../middleware/auth')
+
+//POST  >> SIGNUP  +  SIGNIN 
+//A account already exists with this email address. Pls Sign in using it.
+// /adduser  >> /signup
+router.post('/signup',async(req,res)=>{  
+    // any user email exists then, i shouldnt be able to create the user
+   try{
+    // check for an duplicate email address
+    let user=await User.findOne({email:req.body.email})
+    console.log(user)
+    if(user){
+        console.log("User is found",req.body.email)
+        return res.send("User already exists")
+    }
+    // password hashing
+    const salt=await bcrypt.genSalt(10)
+    const hashedPassword=await bcrypt.hash(req.body.password,salt)
+      
+    const userData=new User({
+        ...req.body,// making the copy of req.body 
+        password: hashedPassword  // this one i need to update
+    })
+    userData.save()
+    res.send(userData)
+    }
+    catch(e){
+        res.send("Some Error occured")
+    }
+
+})
+
+// /signin route
+router.post('/signin',async(req,res)=>{
+    try{
+    let user = await User.findOne({
+    $and:[
+        {email:req.body.email},
+        {phone_number:req.body.phone_number}
+    ]                
+    })
+    // console.log("NewUser",user)
+    const isMatch = await bcrypt.compare(req.body.password,user.password) //req.body.password >> When a user type, user.password >>> data from DB
+    // console.log(isMatch)
+    if(isMatch && user){
+        // Generate a token
+        const token = await user.generateAuthToken()
+        // console.log(token)
+         res.send({
+            user:user,
+            token:token
+        })    
+     }
+    }catch(e){
+        res.send(
+            {message:"Your login credentials are incrrect, kindly check and re-enter"}
+        )
+    }
+})
+
+//GET REQUEST
+//Profie Route >> User Specific Route
+//authorization >>> 
+router.get('/users',auth,async(req,res)=>{
+    // db.collectionName.find({})
+    //User.find({})
+    const getAllUsers=await User.find({})
+    res.send(getAllUsers)
+})
+
+//ex: router.get('/users',>> server is down(middle ware is called)
+//ex : router.post('/signin'>> server is down(middle ware is called)
+
+//protectd route
+// auth to be passes to those actually needs not to all
+// router.get('/users' >> middle ware is called
+
+//specific route , i will pass the middleware
+// router.get('/users',middleware,()=>{})
+
+//GET_ ID
+router.get('/users/:id',async(req,res)=>{
+    // requesting the data through body >> req.body
+    // requesting the data through query >> req.query
+    //requesting the data through params >> req.params
+    //Model.findById
+    const getUser=await User.findById(req.params.id)
+    res.send(getUser)
+})
+
+
+
+//UPDATE 
+router.put('/users/:id',async(req,res)=>{
+    //req.params
+    //req.body
+    const updateUser=await User.findByIdAndUpdate(req.params.id,req.body,{new:true,runValidators:true})
+    res.send(updateUser)
+
+})
+
+//DELETE
+router.delete('/user/:id',async(req,res)=>{
+    const deleteUser=await User.findByIdAndDelete(req.params.id)
+    res.send({
+        deletedUser:deleteUser,
+        message:"Deleted Successfully"
+    })
+})
+
+module.exports=router
