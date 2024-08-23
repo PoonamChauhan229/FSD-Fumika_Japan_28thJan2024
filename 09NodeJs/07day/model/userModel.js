@@ -24,6 +24,13 @@ userSchema.methods.generateAuthToken= async function(req,res){
     console.log(token)
     return token
 }
+//virtual Feild we will so that we conncet the collections
+// taskRel >> developerDefined feildname
+userSchema.virtual('taskRel',{
+    ref:"Task",
+    localField:"_id",//current model feild
+    foreignField:"owner"//
+})
 
 const User=mongoose.model("User",userSchema)
 

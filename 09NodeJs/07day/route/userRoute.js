@@ -43,9 +43,9 @@ router.post('/signin',async(req,res)=>{
         {phone_number:req.body.phone_number}
     ]                
     })
-    // console.log("NewUser",user)
+    console.log("NewUser",user,req.body)
     const isMatch = await bcrypt.compare(req.body.password,user.password) //req.body.password >> When a user type, user.password >>> data from DB
-    // console.log(isMatch)
+    console.log(isMatch)
     if(isMatch && user){
         // Generate a token
         const token = await user.generateAuthToken()
@@ -55,7 +55,8 @@ router.post('/signin',async(req,res)=>{
             token:token
         })    
      }
-    }catch(e){
+    }
+    catch(e){
         res.send(
             {message:"Your login credentials are incrrect, kindly check and re-enter"}
         )
@@ -63,15 +64,6 @@ router.post('/signin',async(req,res)=>{
 })
 
 //GET REQUEST
-//Profie Route >> User Specific Route
-//authorization >>> 
-router.get('/users',auth,async(req,res)=>{
-    // db.collectionName.find({})
-    //User.find({})
-    const getAllUsers=await User.find({})
-    res.send(getAllUsers)
-})
-
 //ex: router.get('/users',>> server is down(middle ware is called)
 //ex : router.post('/signin'>> server is down(middle ware is called)
 
@@ -81,26 +73,38 @@ router.get('/users',auth,async(req,res)=>{
 
 //specific route , i will pass the middleware
 // router.get('/users',middleware,()=>{})
-
-//GET_ ID
-router.get('/users/:id',async(req,res)=>{
-    // requesting the data through body >> req.body
-    // requesting the data through query >> req.query
-    //requesting the data through params >> req.params
-    //Model.findById
-    const getUser=await User.findById(req.params.id)
-    res.send(getUser)
+//Profie Route >> User Specific Route
+//authorization >>> 
+router.get('/users/profile',auth,async(req,res)=>{
+    console.log(req.token)
+    console.log(req.user)
+    const getProfile=await User.findById(req.user._id)
+    res.send(getProfile)
 })
 
-
-
+//Profile >> Edit and update our profile || protected route
+//Profile >> Remove || Delete our profile
 //UPDATE 
-router.put('/users/:id',async(req,res)=>{
-    //req.params
-    //req.body
-    const updateUser=await User.findByIdAndUpdate(req.params.id,req.body,{new:true,runValidators:true})
-    res.send(updateUser)
-
+router.put('/users/profile',auth,async(req,res)=>{
+   try{
+     //auth >> Bearer token >> header > authorization
+     console.log("Update Profile Id",req.user._id)// auth ? why will i pass from url
+     //req.params
+     //req.body
+     if(req.body.password){
+         const salt=await bcrypt.genSalt(10)
+         const hashedPassword=await bcrypt.hash(req.body.password,salt)
+         req.body.password=hashedPassword
+     }
+     const updateUser=await User.findByIdAndUpdate(req.user._id,req.body,{new:true,runValidators:true})
+     if(updateUser){
+         res.send(updateUser)
+     }else{
+         res.send({message:"User Not Found, hence cant be updated"})
+     }
+   }catch(e){
+    res.send("Some Internal Error")
+   }
 })
 
 //DELETE

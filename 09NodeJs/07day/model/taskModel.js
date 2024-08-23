@@ -1,13 +1,15 @@
 const mongoose=require('mongoose')
 const taskSchema=new mongoose.Schema({
     task_name: {type:String,required:true,uppercase:true},
-    user_name:{type:String,required:true},
     description:{type:String,required:false,lowercase:true},
-    duration:{type:Number,required:true,default:"5hr"},
-    location:{type:String,required:true,default:"unknown"},
-    date:{type:String},
-    completed:{type:Boolean,required:true}
+    completed:{type:Boolean,required:true},
+    owner:{// user_id
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User",// refer to User Model
+        required:true
+    }
 })
+
 
 const Task= mongoose.model("Task",taskSchema)
 module.exports=Task;

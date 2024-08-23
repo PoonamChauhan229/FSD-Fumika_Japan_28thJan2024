@@ -1,6 +1,21 @@
 const Task=require('../model/taskModel')
 const express=require('express')
 const router=express.Router()
+const auth=require('../middleware/auth')
+
+//POST
+router.post('/addtask',auth,async(req,res)=>{
+    //token to be sendout to the postman
+    //token > signin
+   // console.log(req.user)//auth
+    const taskData = new Task({
+        ...req.body,
+        owner:req.user._id
+    })
+    await taskData.save()
+    res.send(taskData)
+})
+
 
 //GET REQUEST
 router.get('/task',async(req,res)=>{
@@ -10,18 +25,7 @@ router.get('/task',async(req,res)=>{
 
 //GET_ ID
 router.get('/task/:id',async(req,res)=>{
-    //try{}catch(e){}
-    // try catch block {}
-    // try > executable code 
-    // catch >> error handling
-
-    // const getTask=await Task.findById(req.params.id)
-    //     if(getTask){
-    //         res.send(getTask)
-    //     }
-    //     res.send({message:"Task Not Found"})
-
-    try{
+     try{
         const getTask=await Task.findById(req.params.id)
         if(getTask){
             res.send(getTask)
@@ -37,13 +41,6 @@ router.get('/task/:id',async(req,res)=>{
     
 })
 
-//POST
-router.post('/addtask',async(req,res)=>{
-    const taskData = new Task(req.body)
-    taskData.save()
-    res.send(taskData)
-
-})
 
 //UPDATE 
 router.put('/task/:id',async(req,res)=>{
