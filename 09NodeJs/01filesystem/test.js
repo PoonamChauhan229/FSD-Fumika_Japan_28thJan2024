@@ -12,3 +12,5 @@ const add=sum(4,5)
 console.log(add)
 show()
 
+sum(6,7)
+sum(7,8)

@@ -1,6 +1,77 @@
 const User=require('../model/userModel')
 const express=require('express')
 const router=express.Router() 
+const bcrypt=require('bcryptjs')
+
+//POST  >> SIGNUP  +  SIGNIN 
+//A account already exists with this email address. Pls Sign in using it.
+// /adduser  >> /signup
+router.post('/adduser',async(req,res)=>{  
+    // any user email exists then, i shouldnt be able to create the user
+    try{
+    // check for an duplicate email address
+    let user=await User.findOne({email:req.body.email})
+    console.log(user)
+    if(user){
+        console.log("User is found",req.body.email)
+        return res.send("User already exists")
+    }
+    // password hashing
+    const salt=await bycrypt.genSalt(10)
+    const hashedPassword=await bycrypt.hash(req.body.password,salt)
+
+    // adding a new user +
+    //const userData=new User(req.body) // >> Password hashed 
+
+    // const userData= new User({
+    //     name: req.body.name,
+    //     age: req.body.age,
+    //     phone_number: req.body.phone_number,
+    //     email: req.body.email,
+    //     registered: req.body.registered,
+    //     password: hashedPassword
+    // })
+        
+    const userData=new User({
+        ...req.body,// making the copy of req.body 
+        password: hashedPassword  // this one i need to update
+    })
+    userData.save()
+    res.send(userData)
+    }
+    catch(e){
+        res.send("Some Error occured")
+    }
+
+})
+
+// /signin route
+router.post('/signin',async(req,res)=>{
+    try{
+    let user = await User.findOne({
+    $and:[
+        {email:req.body.email},
+        {phone_number:req.body.phone_number}
+    ]                
+    })
+    // console.log("NewUser",user)
+    const isMatch = await bcrypt.compare(req.body.password,user.password) //req.body.password >> When a user type, user.password >>> data from DB
+    // console.log(isMatch)
+    if(isMatch && user){
+        // Generate a token
+        const token = await user.generateAuthToken()
+        // console.log(token)
+         res.send({
+            user:user,
+            token:token
+        })    
+     }
+    }catch(e){
+        res.send(
+            {message:"Your login credentials are incrrect, kindly check and re-enter"}
+        )
+    }
+})
 
 //GET REQUEST
 router.get('/users',async(req,res)=>{
@@ -20,16 +91,7 @@ router.get('/users/:id',async(req,res)=>{
     res.send(getUser)
 })
 
-//POST
-router.post('/adduser',async(req,res)=>{
-    //req> request
-    // ? req.query
-    // req.body
-    const userData= new User(req.body)
-    userData.save()
-    res.send(userData)
 
-})
 
 //UPDATE 
 router.put('/users/:id',async(req,res)=>{

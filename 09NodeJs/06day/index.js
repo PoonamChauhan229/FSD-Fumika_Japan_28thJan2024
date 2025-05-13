@@ -3,8 +3,13 @@ const connection=require('./db/connection')
 const taskRoute=require('./route/taskRoute')
 const userRoute=require('./route/userRoute')
 const app=express()
-const PORT=8001
-
+const cors=require('cors')
+//dotenv
+const dotenv=require('dotenv')
+dotenv.config()
+app.use(cors())
+// Port no
+const PORT=process.env.PORT
 connection()
 app.use(express.json())// middleware
 

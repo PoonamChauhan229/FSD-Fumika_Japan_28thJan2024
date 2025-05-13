@@ -1,0 +1,205 @@
+mongoose :
+npm i mongoose
+
+node with express
+
+node with mongodb
+
+node with express mongodb
+
+
+mongodb connection >> connect to db
+creation model     >> create the collection
+insert and save    >> saving date to collection
+
+all these we did it one file
+
+db     > connection
+model  > only ur models
+
+____________________________________________________________________________________________________________
+Create an project
+
+create a Project folder
+
+Inside the folder > Inside the Terminal
+
+Installations
+npm init -y
+npm i nodemon
+npm i express
+npm i mongoose
+update the scripts in package.json
+
+Folder Setup 
+db
+model
+route
+node_modules  >> Auto Generated
+
+File Creation in MainFolder/ProjectFolder
+index.js      >> imports (require()) + Server Start Message
+.gitignore    >> node_modules
+
+File Setup inside the folders
+db      >>> connection.js                                    || MongodbConnection           >> exports
+model   >>> All the Models Files  >> modelName_Model.js      || mongoose Collection+ Schema >> exports 
+route   >>> All the Routing Files >> modelName_Route.js      || Model + express.Router()    >> export
+____________________________________________________________________________________________________________
+index.js  is ur mainfolder , neat and clean
+
+
+
+
+Source code is in the cloud  : github 
+Mongodb                      : local 
+
+Mongodb > cloud >> database 
+
+//Movie Application is in the cloud
+movie23-netlify.com   >>> source code is in the cloud >> netlify (access)  >> to host my frontend
+
+// 
+Souce code 
+Mongodb DB cloud
+
+Mongodb Atlas :
+
+
+____________________________________________________________________________________________________________
+Securing our stuffs
+data security of developers/companies:
+>>
+
+.env
+
+
+Profile of an user, we have successfully 
+create
+updation
+deletion
+
+
+//user1 > 5 task
+//user2 > 10 task
+//user3 > 5 tasks
+
+Total :20 task
+
+ideally 
+it should be user specific task
+user task relationship model
+
+// relationship
+// user > seperate  
+// task > seperate 
+
+
+
+    task > userid >>user
+    
+    user > taskid >> task
+
+    easist way ?
+
+    registerred an task >> userid :
+    /addtask >> task generated(req.body) + auth ...+userid
+    res.send({task,userid})
+
+    not going to create relationship
+    >>
+    create an relationship
+    virtualFeild
+
+    >TaskModel  >> userId (Updated our Model)
+    >Create a relationship between the collection
+        > Task + User
+        > User_id-(Task) + Virtual Field-(User Model)
+
+    >taskRoute
+
+
+
+
+//Query String || Query Paramaters
+
+// ?key=value&key1=value1
+// ?search=games&rating=5
+// request > in form of query string >> u give me the india weather details 
+
+
+// /weather >> res.send({"country":"india","forecast":"Cloudy"},{"country":"USA","forecast":"moist"})
+// req.query
+
+
+Query Parameters  || Query String
+
+Query Parameter  > req.params.id >> url /:id
+Query Staring    > req.query     >> ?completed=true
+
+Most important will have all this... but 
+Pagination:
+Filtering
+Sorting
+
+Pool of data 
+test > 10 res >> 90 res
+make a api >> 10 res ( time? less)  || 90 res(time? more)
+//fullstack >> fe + be >> client to be satisfied ()
+UI Layer   >> HTML + CSS +REACT
+Data Layer >> API CALL >> UPDATE UI
+>> CLIENT|| USERS  >> UI + DATA
+
+>>use query string >> lessen the time taken for faster response 
+
+>> sort +filtering+pagination >> can be handled from frontend also
+>> frontend >>90 results >> try implement the rest of the things
+>> backend  >> depending upn the situation
+
+
+
+>> sorting 
+asc  >1
+desc >-1
+feildname || 1/-1
+
+options:{
+    sort:{
+        feildname:1 or feildname:-1
+        completed:1 or completed:-1
+        createdAt:1 or createdAt:-1
+    }
+}
+// static one 
+//using the url
+//query string
+?fumika=nodejs >> feildname
+?sortBy=createdAt_asc
+?sortBy=createdAt_desc
+or
+?sortBy=createdAt:asc
+?sortBy=createdAt:desc
+
+
+// want to add in DB >>
+userModel >> defined schema >> name age email etc >>> avatar
+// user authentication _token > middleware ---auth
+//userRouter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

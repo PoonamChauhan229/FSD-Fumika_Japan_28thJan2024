@@ -94,3 +94,9 @@ app.listen(PORT,()=>{
 
 // /weather >> res.send({"country":"india","forecast":"Cloudy"},{"country":"USA","forecast":"moist"})
 // req.query
+
+
+// Query Parameters  || Query String
+
+// Query Parameter  > req.params.id >> url /:id
+// Query Staring    > req.query     >> ?completed=true
