@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="search" placeholder="Type to search..." />
+
+<script>
+  // Simple debounce function
+  function debounce(fn, delay) {
+    let id;
+    return function (x) {
+      clearTimeout(id);
+      id = setTimeout(() => fn(x), delay);
+    };
+  }
+
+  // Simulate fetch
+  function fetchData(query) {
+    console.log("Fetching for:", query);
+  }
+
+  const debouncedFetch = debounce(fetchData, 500);
+
+  // Add input listener
+  document.getElementById("search").addEventListener("input", function (e) {
+    debouncedFetch(e.target.value);
+  });
+</script>
+
+</body>
+</html>

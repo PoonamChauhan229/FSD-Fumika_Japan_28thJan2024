@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function sayHello(name){
+            // execution is inside and output inside the function
+            console.log("Hello World",name)
+        }
+
+        function debounce(fn,delay){ //parametsr         
+        let timeoutId; // to store the timerId settimeout
+
+        return function(args){
+            clearTimeout(timeoutId)   //clear if any scheduled call / pervious 
+            timeoutId= setTimeout(()=>fn(args),delay) // scheduled a new call after delay
+
+        }
+
+        }
+
+        // console.log(debounce())
+        const debouncedHello= debounce(sayHello,500) //args
+        debouncedHello("Al")
+        debouncedHello("Alice")
+        debouncedHello("Ali")
+
+
+
+
+
+
+        // console.log(debouncedHello)
+        // console.log(debouncedHello+20) //21
+        // setTimeout()  >> exectue 1 time >> after certain delay >> 
+        // clearTimeout()
+
+        // setInterval() >> exectue n time >> after certain interval >>10s
+        // clearInterval() 
+
+
+        // searching >> exectue 1 time >> after certain delay >>1nce search 
+
+
+        // function >> calculate the sum of marks  >> return total >>execution ||o/p will be used outside
+        // function >> calculate the % >>totalof score/totalmaks *100
+       
+
+
+        // Debounce 
+        // >> Its an Higher Order function (1 function another takes another function)
+        // >> It takes Function as an input and return a new debounce function i.e. new version of that function
+
+        // Usage:
+        // Wait /pause in a series of events 
+        // Its runs a function only delay after the delay and whatever pervious calls are there , they are cancelled
+
+        // DEbounce Function returns a new function that delays calling fn until after dealy ms with further no calls
+
+
+        //search ?
+
+
+
+    </script>
+</body>
+</html>

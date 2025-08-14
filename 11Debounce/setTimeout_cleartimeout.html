@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let timeoutId=setTimeout(()=>{
+            console.log("Runs after 3 sec only 1nce")
+        },3000)  // 3000 milliseconds >> 3secs
+
+
+
+        // clearTimeout() >>clear the timer/time
+        // execution >> 3secs 
+        // remove the timer >>execution go on hold >>execution will not perform 
+
+        // Cancel the timer before it runs
+        clearTimeout(timeoutId)
+
+
+        // Inbuilt function invoke and use
+        // setInterval()
+        // setTimeout()
+        // clearInterval()
+        // clearTimeout()
+      
+        
+    </script>
+</body>
+</html>

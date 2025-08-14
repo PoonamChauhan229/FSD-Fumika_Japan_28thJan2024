@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      <button></button>  
+    <input type="text" name="a" id="search">
+    <script>
+        // fetching ||making api||search
+        function fetchData(searchTerm){
+            console.log("Searching For",searchTerm)
+            // api call ---
+        }
+        function debounce(fn,delay){
+            let timeoutId;
+            return function(args){
+                clearTimeout(timeoutId)
+                timeoutId=setTimeout(()=>fn(args),delay)
+            }
+        }
+
+        const debounceFetch=debounce(fetchData,500)
+        console.log(debounceFetch)
+        debounceFetch("Hello")
+        debounceFetch("Fumika")
+
+        // Input Box >> Create with help of JS
+
+        let btn=document.createElement('button')
+        btn.innerText="Submit"
+        btn.setAttribute("id","btnSubmit")
+        document.body.append(btn)
+
+        // let inputText=document.createElement
+        
+        // let x=document.createElement('input')
+        // x.type="text"
+        // x.placeholder="TypeSomething New..."
+        // console.log("inputFecth",x)
+        // document.body.append(x)
+
+        let search=document.getElementById('search')
+        console.log(search)
+
+        search.addEventListener("input",(e)=>{
+            // console.log(e.target.value)
+            debounceFetch(e.target.value)
+        })
+
+
+        // create a another inputbox with JS and attach eventlistner to it and perform debounce
+       
+
+    </script>
+</body>
+</html>
